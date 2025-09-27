@@ -1,6 +1,6 @@
-# VanUI
+# SilUI
 
-VanUI is a modern, lightweight, and customizable design system built with Vue 3 and TypeScript. It provides a comprehensive set of UI components and utilities designed for building responsive and accessible web applications.
+SilUI is a modern, lightweight, and customizable design system built with Vue 3 and TypeScript. It provides a comprehensive set of UI components and utilities designed for building responsive and accessible web applications.
 
 ## Repository
 - **GitHub**: https://github.com/silvandiepen/vanui

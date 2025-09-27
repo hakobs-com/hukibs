@@ -1,4 +1,4 @@
-# VanUI
+# SilUI
 
 A modern, lightweight Vue 3 component library focused on developer experience and design consistency.
 
@@ -41,11 +41,11 @@ Components for structuring page layouts:
 ## 🚀 Installation
 
 ```bash
-npm install vanui
+npm install @sil/ui
 # or
-pnpm add vanui
+pnpm add @sil/ui
 # or
-yarn add vanui
+yarn add @sil/ui
 ```
 
 ## 📖 Usage
@@ -56,7 +56,7 @@ yarn add vanui
 // main.ts
 import { createApp } from 'vue'
 import App from './App.vue'
-import 'vanui/style.css' // Import VanUI styles
+import '@sil/ui/style.css' // Import SilUI styles
 
 const app = createApp(App)
 app.mount('#app')
@@ -64,17 +64,17 @@ app.mount('#app')
 
 ### Using SCSS Mixins
 
-If you want to use VanUI's SCSS mixins and customize theming:
+If you want to use SilUI's SCSS mixins and customize theming:
 
 ```scss
 // In your app's main SCSS file
-@use "vanui/style.scss" as vanui;
+@use "@sil/ui/style.scss" as silui;
 
 // Use the mixins
-@include vanui.app();
-@include vanui.reset();
-@include vanui.typography();
-@include vanui.fonts();
+@include silui.app();
+@include silui.reset();
+@include silui.typography();
+@include silui.fonts();
 
 // Override CSS variables
 :root {
@@ -105,8 +105,8 @@ If you want to use VanUI's SCSS mixins and customize theming:
 
 <script setup lang="ts">
 import { ref } from 'vue'
-import { Container, Card, SearchInput, Button, Icon } from 'vanui'
-import 'vanui/style.css' // Import the styles
+import { Container, Card, SearchInput, Button, Icon } from '@sil/ui'
+import '@sil/ui/style.css' // Import the styles
 
 const searchQuery = ref('')
 
@@ -195,7 +195,7 @@ const performSearch = () => {
 
 ## 🎨 Theming
 
-VanUI uses CSS custom properties for theming. Override these variables to customize the appearance:
+SilUI uses CSS custom properties for theming. Override these variables to customize the appearance:
 
 ```css
 :root {
@@ -286,7 +286,7 @@ All components follow these patterns:
 - [x] SettingsLayout
 
 ### Phase 5: Migration
-- [ ] Update all @skumize/ui imports to VanUI
+- [ ] Update all @skumize/ui imports to SilUI
 - [ ] Remove @skumize/ui dependency
 - [ ] Comprehensive documentation
 - [ ] Storybook examples
