@@ -1,0 +1,58 @@
+{
+  "name": "vanui",
+  "version": "0.1.0",
+  "description": "A modern Vue 3 UI component library with CSS custom properties theming",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/silvandiepen/vanui.git"
+  },
+  "homepage": "https://github.com/silvandiepen/vanui#readme",
+  "bugs": {
+    "url": "https://github.com/silvandiepen/vanui/issues"
+  },
+  "main": "./dist/index.es.js",
+  "module": "./dist/index.es.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.es.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./style.css": "./dist/style.css",
+    "./style.scss": "./src/styles/index.scss"
+  },
+  "files": [
+    "dist",
+    "src/styles",
+    "README.md"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc && vite build",
+    "preview": "vite preview",
+    "typecheck": "vue-tsc --noEmit"
+  },
+  "peerDependencies": {
+    "vue": "^3.4.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.0.4",
+    "typescript": "^5.2.2",
+    "vite": "^5.2.0",
+    "vite-plugin-dts": "^3.8.3",
+    "vue": "^3.4.21",
+    "vue-tsc": "^2.0.6"
+  },
+  "keywords": [
+    "vue",
+    "vue3",
+    "ui",
+    "components",
+    "library",
+    "typescript",
+    "css-custom-properties"
+  ],
+  "author": "Sil van Diepen",
+  "license": "MIT"
+}

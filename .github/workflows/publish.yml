@@ -1,0 +1,122 @@
+name: Publish to npm
+
+on:
+  push:
+    branches:
+      - main
+      - master
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Version type (patch, minor, major)'
+        required: false
+        default: 'patch'
+        type: choice
+        options:
+          - patch
+          - minor
+          - major
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          registry-url: 'https://registry.npmjs.org'
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8
+
+      - name: Get pnpm store directory
+        id: pnpm-cache
+        shell: bash
+        run: |
+          echo "STORE_PATH=$(pnpm store path)" >> $GITHUB_OUTPUT
+
+      - name: Setup pnpm cache
+        uses: actions/cache@v4
+        with:
+          path: ${{ steps.pnpm-cache.outputs.STORE_PATH }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Run tests (if any)
+        run: pnpm test --if-present
+
+      - name: Build package
+        run: pnpm build
+
+      - name: Configure Git
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+
+      - name: Determine version bump
+        id: version
+        run: |
+          # Default to patch
+          VERSION_TYPE="${{ github.event.inputs.version || 'patch' }}"
+          
+          # Check commit messages for version hints
+          if [[ "${{ github.event.head_commit.message }}" == *"BREAKING CHANGE"* ]] || [[ "${{ github.event.head_commit.message }}" == *"major:"* ]]; then
+            VERSION_TYPE="major"
+          elif [[ "${{ github.event.head_commit.message }}" == *"feat:"* ]] || [[ "${{ github.event.head_commit.message }}" == *"minor:"* ]]; then
+            VERSION_TYPE="minor"
+          fi
+          
+          echo "VERSION_TYPE=$VERSION_TYPE" >> $GITHUB_OUTPUT
+
+      - name: Bump version
+        id: bump
+        run: |
+          npm version ${{ steps.version.outputs.VERSION_TYPE }} --no-git-tag-version
+          VERSION=$(node -p "require('./package.json').version")
+          echo "VERSION=$VERSION" >> $GITHUB_OUTPUT
+
+      - name: Commit version bump
+        run: |
+          git add package.json
+          git commit -m "chore: bump version to ${{ steps.bump.outputs.VERSION }}"
+          git tag v${{ steps.bump.outputs.VERSION }}
+
+      - name: Push changes
+        run: |
+          git push origin main --follow-tags
+
+      - name: Publish to npm
+        run: npm publish --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Create GitHub Release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: v${{ steps.bump.outputs.VERSION }}
+          release_name: Release v${{ steps.bump.outputs.VERSION }}
+          body: |
+            ## Changes in this release
+            
+            ${{ github.event.head_commit.message }}
+            
+            ---
+            
+            See [full changelog](https://github.com/${{ github.repository }}/compare/v${{ steps.bump.outputs.VERSION }}...HEAD)
+          draft: false
+          prerelease: false
