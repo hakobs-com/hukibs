@@ -14,7 +14,7 @@
           indeterminate
         />
         <div v-else :class="bemm('icon', ['', color])">
-          <Icon :name="icon" />
+          <Icon :name="icon || 'chart-bar'" />
         </div>
       </div>
       <div :class="bemm('content')">

@@ -14,7 +14,7 @@ interface NormalizedOptionGroup {
 
 // Change the type to allow null
 const model = defineModel<string | null>({
-	default: undefined,
+	default: null,
 });
 
 const props = withDefaults(defineProps<SelectInputProps>(), {
@@ -78,7 +78,9 @@ const optionsObject = computed<Option[] | NormalizedOptionGroup[]>(() => {
 	return (props.options as string[] | Option[]).map((option: string | Option) => toOptions(option));
 });
 
-const handleChange = (value: string | null) => {
+const handleChange = (event: Event) => {
+	const target = event.target as HTMLSelectElement;
+	const value = target.value;
 	const finalValue = props.allowNull && value === '' ? null : value;
 	emit('change', finalValue);
 };
@@ -87,13 +89,14 @@ const handleChange = (value: string | null) => {
 <template>
 	<InputBase
 		v-if="model !== undefined"
-		v-model="model"
+		:modelValue="model ?? undefined"
 		:block="block"
 		:label="label"
 		:description="description"
 		:error="error"
 		:size="size"
 		:disabled="disabled"
+		@update:modelValue="model = $event ?? null"
 		@change="handleChange"
 		@touched="$emit('touched', $event)"
 	>
@@ -143,13 +146,14 @@ const handleChange = (value: string | null) => {
 	</InputBase>
 	<InputBase
 		v-else
-		:value="props.modelValue ?? ''"
+		:modelValue="props.modelValue ?? undefined"
 		:block="block"
 		:label="label"
 		:description="description"
 		:error="error"
 		:size="size"
 		:disabled="disabled"
+		@update:modelValue="$emit('update:modelValue', $event)"
 		@change="handleChange"
 		@touched="$emit('touched', $event)"
 	>
@@ -162,7 +166,7 @@ const handleChange = (value: string | null) => {
 				@change="
 					(e) => {
 						handleInput(e);
-						handleChange((e.target as HTMLSelectElement).value || null);
+						handleChange(e);
 					}
 				"
 			>

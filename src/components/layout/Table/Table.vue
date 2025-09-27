@@ -153,7 +153,7 @@
 </template>
 
 <script setup lang="ts">
-import { computed, provide, ref, watchEffect, h } from 'vue'
+import { computed, provide, ref, watchEffect } from 'vue'
 import { useBemm } from 'bemm'
 import { Icon } from '../../ui'
 import type { TableProps } from './Table.model'

@@ -53,7 +53,7 @@ import { Button } from '../../ui/Button';
 import ThemeToggle from '../../ui/ThemeToggle.vue';
 import type { AppHeaderProps } from './AppHeader.model';
 
-const props = withDefaults(defineProps<AppHeaderProps>(), {
+withDefaults(defineProps<AppHeaderProps>(), {
   showThemeToggle: true,
   showSettings: false
 });

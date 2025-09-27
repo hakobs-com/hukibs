@@ -17,7 +17,7 @@ import { computed, useSlots } from 'vue';
 import { useBemm } from 'bemm';
 import type { PageHeaderProps } from './PageHeader.model';
 
-const props = defineProps<PageHeaderProps>();
+defineProps<PageHeaderProps>();
 const slots = useSlots();
 
 const { bemm } = useBemm('page-header');

@@ -22,7 +22,7 @@ const props = withDefaults(defineProps<ThemeToggleProps>(), {
   theme: 'light'
 })
 
-const emit = defineEmits<{
+defineEmits<{
   toggle: []
 }>()
 

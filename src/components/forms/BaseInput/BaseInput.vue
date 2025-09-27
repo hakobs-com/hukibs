@@ -59,7 +59,7 @@
 </template>
 
 <script setup lang="ts">
-import { computed, useAttrs } from 'vue'
+import { computed } from 'vue'
 import { useId } from '../../../composables/useId'
 import { Icon } from '../../ui/Icon'
 import type { BaseInputProps } from './BaseInput.model'
@@ -75,7 +75,6 @@ const props = withDefaults(defineProps<BaseInputProps>(), {
   clearTitle: 'Clear'
 })
 
-const attrs = useAttrs()
 const inputId = useId('input')
 
 const modelValue = defineModel<string>()

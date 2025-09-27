@@ -42,7 +42,7 @@ const { menu } = {
 
 const menuItems = ref(processMenuItems(menu));
 
-watch(() => props.config, (newConfig, oldConfig) => {
+watch(() => props.config, (newConfig, _oldConfig) => {
     if (newConfig) {
         const { menu } = {
             ...ContextMenuConfigDefault,

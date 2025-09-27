@@ -35,7 +35,6 @@
 </template>
 
 <script setup lang="ts">
-import { computed } from 'vue';
 import { useBemm } from 'bemm';
 import { Icon } from '../Icon';
 import type { OptionItemProps } from './OptionItem.model';

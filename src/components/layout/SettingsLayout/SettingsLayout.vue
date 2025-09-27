@@ -40,7 +40,7 @@ import { Icon } from '../../ui/Icon';
 import { Tooltip } from '../../feedback/Tooltip';
 import type { SettingsLayoutProps } from './SettingsLayout.model';
 
-const props = defineProps<SettingsLayoutProps>();
+defineProps<SettingsLayoutProps>();
 
 const emit = defineEmits<{
   navigate: [sectionId: string];

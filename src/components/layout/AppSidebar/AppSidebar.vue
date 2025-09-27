@@ -126,7 +126,6 @@ const emit = defineEmits<{
 const { bemm } = useBemm('app-sidebar');
 
 // Responsive breakpoints
-const FOLDED_BREAKPOINT = 1200;
 const OVERLAY_BREAKPOINT = 768;
 
 const windowWidth = ref(window.innerWidth);
