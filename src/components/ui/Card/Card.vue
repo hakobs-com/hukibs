@@ -111,7 +111,7 @@ const handleMouseLeave = () => {
 
 <style lang="scss">
 .card {
-  --card-border-width: 2px;
+  --card-border-width: 1px;
   --card-radius: var(--space);
   --card-overflow: visible;
   --card-color: var(--color-primary);
