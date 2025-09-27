@@ -54,5 +54,10 @@
     "css-custom-properties"
   ],
   "author": "Sil van Diepen",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "@sil/color": "^0.5.0",
+    "bemm": "^1.2.2",
+    "open-icon": "^1.1.2"
+  }
 }
