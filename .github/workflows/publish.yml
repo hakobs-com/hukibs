@@ -101,7 +101,7 @@ jobs:
 
       - name: Push changes
         run: |
-          git push origin main --follow-tags
+          git push origin HEAD:${GITHUB_REF#refs/heads/} --follow-tags
 
       - name: Publish to npm
         run: npm publish --access public
