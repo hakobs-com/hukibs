@@ -4,7 +4,7 @@ VanUI is a modern, lightweight, and customizable design system built with Vue 3 
 
 ## Repository
 - **GitHub**: https://github.com/silvandiepen/vanui
-- **NPM**: @yourusername/vanui
+- **NPM**: @sil/ui
 
 ## Architecture
 
