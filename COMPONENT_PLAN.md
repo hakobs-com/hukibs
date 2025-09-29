@@ -1,11 +1,11 @@
-# VanUI Component Organization Plan
+# SilUI Component Organization Plan
 
 ## Current Usage Analysis (from @skumize/ui)
 - **Most Used**: Icon (35), Button (26), Container (17), Card (15)
 - **Medium Used**: Section (7), Colors (7), Badge (6), popupService (5)
 - **Low Used**: Various form inputs, Table components, feedback components
 
-## Proposed VanUI Structure
+## Proposed SilUI Structure
 
 ### 1. Core UI Components (`/src/components/ui/`)
 - **Button** ✅ (already migrated)

@@ -5,11 +5,11 @@
   "type": "module",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/silvandiepen/vanui.git"
+    "url": "git+https://github.com/silvandiepen/sil-ui.git"
   },
-  "homepage": "https://github.com/silvandiepen/vanui#readme",
+  "homepage": "https://github.com/silvandiepen/sil-ui#readme",
   "bugs": {
-    "url": "https://github.com/silvandiepen/vanui/issues"
+    "url": "https://github.com/silvandiepen/sil-ui/issues"
   },
   "main": "./dist/index.es.js",
   "module": "./dist/index.es.js",
