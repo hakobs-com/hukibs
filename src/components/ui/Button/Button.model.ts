@@ -5,6 +5,7 @@
 import type { Colors } from "../../../types";
 
 export const ButtonSize = {
+  XSMALL: 'xsmall',
   SMALL: 'small',
   MEDIUM: 'medium',
   LARGE: 'large'

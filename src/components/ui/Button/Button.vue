@@ -250,10 +250,18 @@ const buttonStyles = computed(() => {
   }
 
   // Sizes
-  &--small {
+  &--xsmall {
     .button__container {
       padding: var(--button-container-padding, var(--space-xs) var(--space-s));
       font-size: 0.66em;
+    }
+  }
+
+  // Sizes
+  &--small {
+    .button__container {
+      padding: var(--button-container-padding, var(--space-s) var(--space));
+      font-size: 0.75em;
     }
   }
 

@@ -90,7 +90,16 @@ const iconMap: Record<string, string> = {
   'key': 'key',
   'file-text': 'file-text',
   'activity': 'heart-activity',
-  'check-circle': 'circled-check'
+  'check-circle': 'circled-check',
+  'image': 'image-m',
+  'photo': 'image-m',
+  'photograph': 'image-m',
+  'information': 'information-circle',
+  'info': 'information-circle',
+  'play': 'play',
+  'play-circle': 'play',
+  'collection': 'folder',
+  'document-text': 'file-text'
 }
 
 // Load icon when name changes

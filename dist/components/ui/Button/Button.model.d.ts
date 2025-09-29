@@ -1,6 +1,7 @@
 import { Colors } from '../../../types';
 
 export declare const ButtonSize: {
+    readonly XSMALL: "xsmall";
     readonly SMALL: "small";
     readonly MEDIUM: "medium";
     readonly LARGE: "large";

@@ -1,12 +1,7 @@
 <template>
-  <div
-    :class="blockClasses"
-    :data-variant="variant"
-    :style="styles"
-    @mousemove="handleMouseMove"
-    @mouseleave="handleMouseLeave"
-    ref="cardRef"
-  >
+  <div :class="blockClasses" :data-variant="variant" :style="styles" @mousemove="handleMouseMove"
+    @mouseleave="handleMouseLeave" ref="cardRef">
+    <div :class="bemm('glow')"></div>
     <div class="card__container">
       <!-- Header -->
       <div v-if="showHeader" :class="['card__header', noHeaderPadding && 'card__header--no-padding']">
@@ -30,6 +25,9 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue'
 import type { CardProps } from './Card.model'
+import { useBemm } from "bemm";
+
+const bemm = useBemm('card');
 
 const props = withDefaults(defineProps<CardProps>(), {
   variant: 'default',
@@ -49,6 +47,7 @@ const slots = defineSlots<{
 const cardRef = ref<HTMLElement>()
 const pointerX = ref(50)
 const pointerY = ref(50)
+const pointerAngle = ref(0)
 
 // Determine if header should be shown
 const showHeader = computed(() => {
@@ -61,25 +60,24 @@ const showFooter = computed(() => {
 })
 
 const blockClasses = computed(() => {
-  const classes = [
-    'card',
-    props.variant && `card--${props.variant}`,
-    props.color && `card--${props.color}`,
-    props.color && 'card--has-color',
-    props.featured && 'card--featured',
-    props.hoverable && 'card--hoverable',
-    props.noPadding && 'card--no-padding',
-    showHeader.value && 'card--has-header',
-    showFooter.value && 'card--has-footer'
-  ]
-
-  return classes.filter(Boolean);
+  return bemm('', [
+    '',
+    props.variant ? `${props.variant}` : '',
+    props.color ? `${props.color}` : '',
+    props.color ? 'has-color' : '',
+    props.featured ? 'featured' : '',
+    props.hoverable ? 'hoverable' : '',
+    props.noPadding ? 'no-padding' : '',
+    showHeader.value ? 'has-header' : '',
+    showFooter.value ? 'has-footer' : '',
+  ])
 })
 
 const styles = computed(() => {
   const styleObj: Record<string, string> = {
     '--pointer-x': `${pointerX.value}%`,
-    '--pointer-y': `${pointerY.value}%`
+    '--pointer-y': `${pointerY.value}%`,
+    '--pointer-angle': `${pointerAngle.value}deg`
   }
 
   if (props.color) {
@@ -100,12 +98,29 @@ const handleMouseMove = (event: MouseEvent) => {
   // Calculate percentage positions
   pointerX.value = Math.round((x / rect.width) * 100)
   pointerY.value = Math.round((y / rect.height) * 100)
+
+  // Calculate angle from center (50%, 50%) to pointer position
+  const centerX = 50
+  const centerY = 50
+  const deltaX = pointerX.value - centerX
+  const deltaY = pointerY.value - centerY
+
+  // Calculate angle in radians then convert to degrees
+  // Math.atan2 returns angle in radians from -π to π
+  // deltaY is positive when going down (CSS coordinates)
+  const angleRadians = Math.atan2(deltaY, deltaX)
+  const angleDegrees = angleRadians * (180 / Math.PI)
+
+  // Normalize angle: 0° at top, positive clockwise
+  // atan2 gives: 0° at right, so we subtract 90°
+  pointerAngle.value = Math.round(angleDegrees)
 }
 
 const handleMouseLeave = () => {
   // Reset to center on mouse leave
   pointerX.value = 50
   pointerY.value = 50
+  // Keep angle at last position
 }
 </script>
 
@@ -122,8 +137,9 @@ const handleMouseLeave = () => {
   overflow: var(--card-overflow);
   display: flex;
   flex-direction: column;
-  padding: 2px;
-  background-image: radial-gradient(circle at var(--pointer-x) var(--pointer-y),  var(--card-color) 0%, color-mix(in srgb, var(--card-color), transparent 90%) 100%);
+  // padding: 2px;
+  // background-image: radial-gradient(circle at var(--pointer-x) var(--pointer-y),  var(--card-color) 0%, color-mix(in srgb, var(--card-color), transparent 90%) 100%);
+
 
   &--has-color {
     --card-background-color: color-mix(in srgb, var(--card-color), transparent 90%);
@@ -144,7 +160,7 @@ const handleMouseLeave = () => {
     border-width: 2px;
   }
 
-  &--has-color{
+  &--has-color {
     --card-background-color: color-mix(in srgb, var(--card-color), var(--color-background) 75%);
   }
 
@@ -159,7 +175,8 @@ const handleMouseLeave = () => {
 
   &__container {
     border-radius: var(--card-radius);
-    background: var(--card-background-color, var(--color-background));
+    background: color-mix(in srgb, var(--card-background-color, var(--color-background)), transparent 50%);
+    backdrop-filter: blur(5px);
     color: var(--card-text-color, var(--color-foreground));
     border-radius: calc(var(--card-radius) - var(--card-border-width));
     height: 100%;
@@ -244,6 +261,88 @@ const handleMouseLeave = () => {
     .card__content {
       padding: var(--space-m, 2rem);
     }
+  }
+
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: -1px;
+    top: -1px;
+    width: 100%;
+    height: 100%;
+    border: 1px solid transparent;
+    border-radius: inherit;
+    display: block;
+    background: conic-gradient(from var(--pointer-angle, 45deg) at center in oklch,
+        transparent 0%, var(--card-color), color-mix(in oklch, var(--card-color), var(--color-light) 80%), var(--card-color), transparent 50%) border-box;
+    mask:
+      linear-gradient(transparent),
+      linear-gradient(black);
+    mask-repeat: no-repeat;
+    mask-clip: padding-box, border-box;
+    mask-composite: subtract;
+  }
+
+
+  &__glow {
+
+    --radius: var(--card-radius);
+
+    pointer-events: none;
+
+    border-radius: calc(var(--radius) * 2.5);
+    border: calc(var(--radius) * 1.25) solid transparent;
+    inset: calc(var(--radius) * -2);
+
+    width: calc(100% + (var(--radius) * 4));
+    height: calc(100% + (var(--radius) * 4));
+    display: block;
+    position: absolute;
+    left: auto;
+    bottom: auto;
+
+    mask: url('https://assets.codepen.io/13471/noise-base.png');
+    mask-mode: luminance;
+    mask-size: 29%;
+
+    opacity: 1;
+    filter: blur(12px) saturate(1.25) brightness(0.5);
+    mix-blend-mode: plus-lighter;
+    z-index: 3;
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border: inherit;
+      border-radius: inherit;
+      background: conic-gradient(from var(--pointer-angle, 45deg) at center in oklch,
+          transparent var(--start, 0%),  color-mix(in oklch, var(--card-color), var(--color-light) 50%), transparent var(--end, 50%)) border-box;
+      mask:
+        linear-gradient(transparent),
+        linear-gradient(black);
+      mask-repeat: no-repeat;
+      mask-clip: padding-box, border-box;
+      mask-composite: subtract;
+      filter: saturate(2) brightness(1);
+
+    }
+
+    &::after {
+      --lit: 70%;
+      --sat: 100%;
+      --start: 15%;
+      --end: 35%;
+      border-width: calc(var(--radius) * 1.75);
+      border-radius: calc(var(--radius) * 2.75);
+      inset: calc(var(--radius) * -0.25);
+      z-index: 4;
+      opacity: 1;
+    }
+
+
   }
 }
 </style>

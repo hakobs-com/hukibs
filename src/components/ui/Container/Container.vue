@@ -2,24 +2,24 @@
   <div :class="containerClasses" :style="containerStyle">
     <!-- Header -->
     <header v-if="showHeader && (title || subtitle || $slots.header)"
-      :class="['container__header', { 'container__header--no-padding': noHeaderPadding }]">
-      <div class="container__header-content">
-        <div v-if="title || subtitle" class="container__header-text">
-          <h1 v-if="title" class="container__title">{{ title }}</h1>
-          <p v-if="subtitle" class="container__subtitle">{{ subtitle }}</p>
+      :class="bemm('header', ['', noPadding || noHeaderPadding ? 'no-padding' : ''])">
+      <div :class="bemm('header-content')">
+        <div v-if="title || subtitle" :class="bemm('header-text')">
+          <h1 v-if="title" :class="bemm('title')">{{ title }}</h1>
+          <p v-if="subtitle" :class="bemm('subtitle')">{{ subtitle }}</p>
         </div>
         <slot name="header" />
       </div>
     </header>
 
     <!-- Content -->
-    <main :class="['container__content', { 'container__content--no-padding': noContentPadding }]">
+    <main :class="bemm('content', ['', noPadding || noContentPadding ? 'no-padding' : ''])">
       <slot />
     </main>
 
     <!-- Footer -->
     <footer v-if="showFooter && $slots.footer"
-      :class="['container__footer', { 'container__footer--no-padding': noFooterPadding }]">
+      :class="bemm('footer', ['', noPadding || noFooterPadding ? 'no-padding' : ''])">
       <slot name="footer" />
     </footer>
   </div>
@@ -27,6 +27,7 @@
 
 <script setup lang="ts">
 import { computed } from 'vue'
+import { useBemm } from 'bemm'
 import type { ContainerProps } from './Container.model'
 
 const props = withDefaults(defineProps<ContainerProps>(), {
@@ -40,10 +41,12 @@ const props = withDefaults(defineProps<ContainerProps>(), {
   noFooterPadding: false
 })
 
+const { bemm } = useBemm('container')
+
 const containerClasses = computed(() => [
-  'container',
-  props.fluid && 'container--fluid',
-  props.max && `container--${props.max}`
+  bemm(),
+  props.fluid && bemm('', 'fluid'),
+  props.max && bemm('', props.max)
 ])
 
 const containerStyle = computed(() => {
@@ -52,12 +55,13 @@ const containerStyle = computed(() => {
     medium: '900px',
     large: '1200px',
     wide: '1400px',
-    full: '100%'
+    full: '100%',
+    'fit-content': 'fit-content'
   }
 
   return {
-    '--container-max-width': props.maxWidth || maxWidths[props.max as keyof typeof maxWidths] || maxWidths.large,
-    '--container-padding': props.padding || 'var(--spacing)'
+    '--int-container-max-width': props.maxWidth || maxWidths[props.max as keyof typeof maxWidths] || maxWidths.large,
+    '--int-container-padding': props.padding || 'var(--spacing)'
   }
 })
 </script>
@@ -65,7 +69,7 @@ const containerStyle = computed(() => {
 <style lang="scss">
 .container {
   width: 100%;
-  max-width: var(--container-max-width, 1200px);
+  max-width: var(--container-max-width, var(--int-container-max-width, 1200px));
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -75,30 +79,10 @@ const containerStyle = computed(() => {
     max-width: 100%;
   }
 
-  &--small {
-    max-width: 600px;
-  }
-
-  &--medium {
-    max-width: 900px;
-  }
-
-  &--large {
-    max-width: 1200px;
-  }
-
-  &--wide {
-    max-width: 1400px;
-  }
-
-  &--full {
-    max-width: 100%;
-  }
-
   &__header {
-    padding: var(--container-padding);
+    padding: var(--container-padding, var(--int-container-padding));
     border-bottom: 1px solid var(--color-border, rgba(255, 255, 255, 0.1));
-    background-image: linear-gradient(to left bottom, color-mix(in srgb, var(--color-primary, #3b82f6), transparent 90%), transparent 50%);
+    background-image: linear-gradient(to left bottom, color-mix(in srgb, var(--color-primary), transparent 90%), transparent 50%);
 
     &--no-padding {
       padding: 0;
@@ -133,7 +117,7 @@ const containerStyle = computed(() => {
 
   &__content {
     flex: 1;
-    padding: var(--container-padding);
+    padding: var(--container-padding, var(--int-container-padding));
     display: flex;
     flex-direction: column;
     gap: var(--space-l, 2rem);
@@ -144,7 +128,7 @@ const containerStyle = computed(() => {
   }
 
   &__footer {
-    padding: var(--container-padding);
+    padding: var(--container-padding, var(--int-container-padding));
     border-top: 1px solid var(--color-border, rgba(255, 255, 255, 0.1));
 
     &--no-padding {

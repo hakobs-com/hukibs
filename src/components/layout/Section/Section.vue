@@ -1,7 +1,7 @@
 <template>
   <section :class="bemm('', ['', centered ? 'centered' : ''])" :data-variant="variant">
     <slot name="before" />
-    <Container v-if="!noContainer" v-bind="containerProps">
+    <Container :class="bemm('container')" v-if="!noContainer" v-bind="containerProps">
       <slot />
     </Container>
     <slot v-else />
@@ -54,6 +54,11 @@ const containerProps = {
 
   &[data-variant="alternate"] {
     background: color-mix(in srgb, var(--color-primary), transparent 95%);
+  }
+
+  &__container{
+    position: relative;
+    z-index: 10;
   }
 }
 </style>

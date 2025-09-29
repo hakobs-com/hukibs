@@ -33,9 +33,9 @@ declare const __VLS_component: import('vue').DefineComponent<import('vue').Extra
     loading: boolean;
     variant: ButtonVariant;
     color: import('../../..').Colors;
+    element: string;
     type: ButtonType;
     size: ButtonSize;
-    element: string;
     to: string;
     disabled: boolean;
     iconOnly: boolean;
