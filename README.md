@@ -1,5 +1,7 @@
 # SilUI
 
+[![Deploy Docs](https://github.com/silvandiepen/sil-ui/actions/workflows/deploy-docs.yml/badge.svg)](https://github.com/silvandiepen/sil-ui/actions/workflows/deploy-docs.yml)
+
 A modern, lightweight Vue 3 component library focused on developer experience and design consistency.
 
 ## 🎯 Design Principles
