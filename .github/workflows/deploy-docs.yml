@@ -45,8 +45,9 @@ jobs:
           pnpm run docs:gen
           pnpm run docs:build
 
-      - name: Setup Pages
+      - name: Setup Pages (non-blocking)
         uses: actions/configure-pages@v5
+        continue-on-error: true
         with:
           enablement: true
           static_site_generator: vitepress
