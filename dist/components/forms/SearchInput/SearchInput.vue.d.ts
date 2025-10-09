@@ -18,12 +18,12 @@ declare const _default: import('vue').DefineComponent<import('vue').ExtractPropT
     description: {
         type: import('vue').PropType<string>;
     };
-    disabled: {
-        type: import('vue').PropType<boolean>;
-    };
     placeholder: {
         type: import('vue').PropType<string>;
         default: string;
+    };
+    disabled: {
+        type: import('vue').PropType<boolean>;
     };
     readonly: {
         type: import('vue').PropType<boolean>;
@@ -64,12 +64,12 @@ declare const _default: import('vue').DefineComponent<import('vue').ExtractPropT
     description: {
         type: import('vue').PropType<string>;
     };
-    disabled: {
-        type: import('vue').PropType<boolean>;
-    };
     placeholder: {
         type: import('vue').PropType<string>;
         default: string;
+    };
+    disabled: {
+        type: import('vue').PropType<boolean>;
     };
     readonly: {
         type: import('vue').PropType<boolean>;

@@ -19,12 +19,12 @@ declare const _default: import('vue').DefineComponent<import('vue').ExtractPropT
         type: import('vue').PropType<string>;
         default: string;
     };
+    placeholder: {
+        type: import('vue').PropType<string>;
+    };
     disabled: {
         type: import('vue').PropType<boolean>;
         default: boolean;
-    };
-    placeholder: {
-        type: import('vue').PropType<string>;
     };
     options: {
         type: import('vue').PropType<AcceptedOptions>;
@@ -69,12 +69,12 @@ declare const _default: import('vue').DefineComponent<import('vue').ExtractPropT
         type: import('vue').PropType<string>;
         default: string;
     };
+    placeholder: {
+        type: import('vue').PropType<string>;
+    };
     disabled: {
         type: import('vue').PropType<boolean>;
         default: boolean;
-    };
-    placeholder: {
-        type: import('vue').PropType<string>;
     };
     options: {
         type: import('vue').PropType<AcceptedOptions>;

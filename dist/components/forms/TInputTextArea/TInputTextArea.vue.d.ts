@@ -40,8 +40,8 @@ declare const _default: import('vue').DefineComponent<import('vue').ExtractPropT
     "onUpdate:modelValue"?: ((value: string) => any) | undefined;
 }>, {
     label: string;
-    disabled: boolean;
     placeholder: string;
+    disabled: boolean;
     readonly: boolean;
     modelValue: string;
     autoGrow: boolean;

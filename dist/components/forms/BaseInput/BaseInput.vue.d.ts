@@ -32,11 +32,11 @@ declare const __VLS_component: import('vue').DefineComponent<import('vue').Extra
     description: {
         type: import('vue').PropType<string>;
     };
-    disabled: {
-        type: import('vue').PropType<boolean>;
-    };
     placeholder: {
         type: import('vue').PropType<string>;
+    };
+    disabled: {
+        type: import('vue').PropType<boolean>;
     };
     readonly: {
         type: import('vue').PropType<boolean>;
@@ -87,11 +87,11 @@ declare const __VLS_component: import('vue').DefineComponent<import('vue').Extra
     description: {
         type: import('vue').PropType<string>;
     };
-    disabled: {
-        type: import('vue').PropType<boolean>;
-    };
     placeholder: {
         type: import('vue').PropType<string>;
+    };
+    disabled: {
+        type: import('vue').PropType<boolean>;
     };
     readonly: {
         type: import('vue').PropType<boolean>;

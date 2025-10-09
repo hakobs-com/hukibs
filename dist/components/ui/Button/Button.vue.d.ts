@@ -36,10 +36,10 @@ declare const __VLS_component: import('vue').DefineComponent<import('vue').Extra
     element: string;
     type: ButtonType;
     size: ButtonSize;
-    to: string;
-    disabled: boolean;
     iconOnly: boolean;
     iconAfter: boolean;
+    disabled: boolean;
+    to: string;
     href: string;
     fullWidth: boolean;
 }, {}, {}, {}, string, import('vue').ComponentProvideOptions, true, {}, any>;

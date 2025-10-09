@@ -38,9 +38,9 @@ declare const __VLS_component: import('vue').DefineComponent<import('vue').Extra
     variant: "primary" | "success" | "warning" | "error" | "info";
     type: "linear" | "circular";
     size: "small" | "medium" | "large";
-    max: number;
     showPercentage: boolean;
     value: number;
+    max: number;
     indeterminate: boolean;
     showBar: boolean;
     showPercentageInBar: boolean;
