@@ -52,23 +52,39 @@ $base-color-names: map.keys($base-colors);
 
 $extend-color-names: map.keys($extended-colors);
 
+
+$color-dark: #080e1f !default;
+$color-light: #fff !default;
+$color-accent-dark: #000 !default;
+$color-accent-light:  map.get($extended-colors, 'beige-light') !default;
+$color-primary: map.get($extended-colors, 'skyblue') !default;
+$color-secondary: map.get($extended-colors, 'violet') !default;
+$color-tertiary: map.get($extended-colors, 'cobalt') !default;
+$color-quaternary: map.get($extended-colors, 'lime') !default;
+$color-quinary: map.get($extended-colors, 'coral') !default;
+//
+$color-success: map.get($extended-colors, 'green') !default;
+$color-warning: map.get($extended-colors, 'orange') !default;
+$color-error: map.get($extended-colors, 'red') !default;
+$color-info: map.get($extended-colors, 'skyblue') !default;
+
 // Project Colors
 $colors: (
-	'dark': #080e1f,
+	'dark': #{$color-default},
 	'light': #ffffff,
-	'accent-dark': #000000,
-	'accent-light': map.get($extended-colors, 'beige-light'),
-	'primary': map.get($extended-colors, 'skyblue'),
-	'secondary': map.get($extended-colors, 'violet'),
-	'tertiary': map.get($extended-colors, 'cobalt'),
-	'quaternary': map.get($extended-colors, 'lime'),
-	'quinary': map.get($extended-colors, 'coral'),
+	'accent-dark': #{$color-accent-dark},
+	'accent-light': #{$color-accent-light},
+	'primary':  #{$color-primary},
+	'secondary': #{$color-secondary},
+	'tertiary': #{$color-tertiary},
+	'quaternary':  #{$color-quaternary},
+	'quinary': #{$color-quinary},
 	//
-	'success': map.get($extended-colors, 'green'),
-	'warning': map.get($extended-colors, 'orange'),
-	'error': map.get($extended-colors, 'red'),
-	'info': map.get($extended-colors, 'skyblue'),
-);
+	'success': #{$color-success},
+	'warning':  #{$color-warning},
+	'error': #{$color-error},
+	'info': #{$color-info},
+) !default;
 
 $color-names: map.keys($colors);
 

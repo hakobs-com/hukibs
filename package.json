@@ -31,7 +31,12 @@
     "dev": "vite",
     "build": "vue-tsc && vite build",
     "preview": "vite preview",
-    "typecheck": "vue-tsc --noEmit"
+    "typecheck": "vue-tsc --noEmit",
+    "docs:gen": "node scripts/generate-props-docs.cjs",
+    "docs:sync": "node scripts/sync-docs.cjs",
+    "docs:dev": "node scripts/sync-docs.cjs && vitepress dev docs",
+    "docs:build": "node scripts/sync-docs.cjs && vitepress build docs",
+    "docs:preview": "vitepress preview docs"
   },
   "peerDependencies": {
     "vue": "^3.4.0"
@@ -42,6 +47,7 @@
     "typescript": "^5.2.2",
     "vite": "^5.2.0",
     "vite-plugin-dts": "^3.8.3",
+    "vitepress": "^1.6.4",
     "vue": "^3.4.21",
     "vue-tsc": "^2.0.6"
   },

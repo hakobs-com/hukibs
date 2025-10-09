@@ -12,6 +12,38 @@ A modern, lightweight Vue 3 component library focused on developer experience an
 
 ## 📁 Component Organization
 
+### Components Overview
+
+- Button: versatile action button with variants and icons — see `src/components/ui/Button/README.md`
+- ButtonGroup: layout for multiple buttons — see `src/components/ui/Button/README.md`
+- Icon: display vector icons — see `src/components/ui/Icon/README.md`
+- Card: flexible content container — see `src/components/ui/Card/README.md`
+- Container: responsive layout wrapper — see `src/components/ui/Container/README.md`
+- Badge: small status label — see `src/components/ui/Badge/README.md`
+- ContextMenu: contextual actions — see `src/components/ui/ContextMenu/README.md`
+- Tabs, Tab, TabPanel: tabbed navigation — see `src/components/ui/Tabs/README.md`
+- CircularProgress: circular loader — see `src/components/ui/CircularProgress/README.md`
+- StatsCard: statistic card — see `src/components/ui/StatsCard/README.md`
+- OptionItem: menu/list option item — see `src/components/ui/OptionItem/README.md`
+- Table (UI): table building blocks — see `src/components/ui/Table/README.md`
+- Progress: linear progress bar — see `src/components/ui/Progress.README.md`
+- ThemeToggle: theme switcher — see `src/components/ui/ThemeToggle.README.md`
+- TextInput: standard text field — see `src/components/forms/TextInput/README.md`
+- SearchInput: search field with clear — see `src/components/forms/SearchInput/README.md`
+- SelectInput: select input — see `src/components/forms/SelectInput/README.md`
+- TInputTextArea: multi-line input — see `src/components/forms/TInputTextArea/README.md`
+- Section: page section wrapper — see `src/components/layout/Section/README.md`
+- PageHeader: page header — see `src/components/layout/PageHeader/README.md`
+- AppHeader: app header — see `src/components/layout/AppHeader/README.md`
+- AppSidebar: app sidebar — see `src/components/layout/AppSidebar/README.md`
+- SettingsLayout: settings layout — see `src/components/layout/SettingsLayout/README.md`
+- Table (Layout): feature table layout — see `src/components/layout/Table/README.md`
+- Popup and popupService: modal dialogs — see `src/components/feedback/Popup/README.md`
+- Toast and toastService: notifications — see `src/components/feedback/Toast/README.md`
+- Tooltip: hint popovers — see `src/components/feedback/Tooltip/README.md`
+- Alert: status messages — see `src/components/feedback/Alert/README.md`
+- EmptyState: placeholder cards — see `src/components/feedback/EmptyState/README.md`
+
 ### UI Components (`/src/components/ui/`)
 Core interface elements for building layouts and displays:
 
@@ -29,14 +61,10 @@ Input components with unified naming and API:
 - **BaseInput** *(internal)* - Foundation component, not exported
 
 ### Feedback Components (`/src/components/feedback/`)
-Components for user feedback and notifications:
+Components for user feedback and notifications (see overview links above).
 
-- *Coming soon: Popup, Toast, Tooltip, Alert, EmptyState*
-
-### Layout Components (`/src/components/layout/`)  
-Components for structuring page layouts:
-
-- *Coming soon: Table, PageHeader, ContextMenu, Tabs*
+### Layout Components (`/src/components/layout/`)
+Components for structuring page layouts (see overview links above).
 
 ## 🚀 Installation
 
