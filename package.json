@@ -1,6 +1,6 @@
 {
   "name": "@sil/ui",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "A modern Vue 3 UI component library with CSS custom properties theming",
   "type": "module",
   "repository": {
