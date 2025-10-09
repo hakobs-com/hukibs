@@ -70,8 +70,8 @@ $color-info: map.get($extended-colors, 'skyblue') !default;
 
 // Project Colors
 $colors: (
-	'dark': #{$color-default},
-	'light': #ffffff,
+	'dark': #{$color-dark},
+	'light': #{$color-light},
 	'accent-dark': #{$color-accent-dark},
 	'accent-light': #{$color-accent-light},
 	'primary':  #{$color-primary},
