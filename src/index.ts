@@ -40,6 +40,7 @@ export { PageFooter } from './components/sections/PageFooter'
 
 // Feedback Components
 export { default as Popup } from './components/feedback/Popup/Popup.vue'
+export { PopupWrapper } from './components/feedback/Popup'
 export { default as PopupSlot } from './components/feedback/Popup/PopupSlot.vue'
 export { popupService } from './components/feedback/Popup/Popup.service'
 export { Alert, AlertVariant } from './components/feedback/Alert'
