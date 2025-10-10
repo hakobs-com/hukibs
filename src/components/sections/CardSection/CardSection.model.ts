@@ -1,4 +1,5 @@
 import type { BaseSectionProps } from '../BaseSection/BaseSection.model'
+import type { Colors } from '../../../types'
 
 export interface CardItem {
   id: string
@@ -7,7 +8,7 @@ export interface CardItem {
   content?: string
   cta?: {
     label: string
-    color?: string
+    color?: Colors
     link?: string
   }
   image?: string

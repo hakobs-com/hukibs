@@ -31,12 +31,12 @@ export { AppHeader } from './components/layout/AppHeader'
 export { AppSidebar } from './components/layout/AppSidebar'
 export { SettingsLayout } from './components/layout/SettingsLayout'
 
-// Section Components (WIP)
-// export { BaseSection } from './components/sections/BaseSection'
-// export { LogoScroller } from './components/sections/LogoScroller'
-// export { CardSection } from './components/sections/CardSection'
-// export { SimpleFooter } from './components/sections/SimpleFooter'
-// export { PageFooter } from './components/sections/PageFooter'
+// Section Components
+export { BaseSection } from './components/sections/BaseSection'
+export { LogoScroller } from './components/sections/LogoScroller'
+export { CardSection } from './components/sections/CardSection'
+export { SimpleFooter } from './components/sections/SimpleFooter'
+export { PageFooter } from './components/sections/PageFooter'
 
 // Feedback Components
 export { default as Popup } from './components/feedback/Popup/Popup.vue'
@@ -57,12 +57,12 @@ export type { OptionItemProps } from './components/ui/OptionItem'
 export type { AppHeaderProps, AppHeaderNavItem } from './components/layout/AppHeader'
 export type { AppSidebarProps, AppSidebarNavItem, AppSidebarSection, AppSidebarUserInfo } from './components/layout/AppSidebar'
 export type { SettingsLayoutProps, SettingsLayoutSection } from './components/layout/SettingsLayout'
-// export type { BaseSectionProps } from './components/sections/BaseSection'
-// export type { LogoScrollerProps, LogoItem } from './components/sections/LogoScroller'
-// export type { CardSectionProps, CardItem } from './components/sections/CardSection'
-// export type { SimpleFooterProps } from './components/sections/SimpleFooter'
-// export type { PageFooterProps } from './components/sections/PageFooter'
-// export type { MenuItem, MenuItemGroup } from './components/sections/Menu.model'
+export type { BaseSectionProps } from './components/sections/BaseSection'
+export type { LogoScrollerProps, LogoItem } from './components/sections/LogoScroller'
+export type { CardSectionProps, CardItem } from './components/sections/CardSection'
+export type { SimpleFooterProps } from './components/sections/SimpleFooter'
+export type { PageFooterProps } from './components/sections/PageFooter'
+export type { MenuItem, MenuItemGroup } from './components/sections/Menu.model'
 
 // Main install function for Vue app
 import type { App } from 'vue'
