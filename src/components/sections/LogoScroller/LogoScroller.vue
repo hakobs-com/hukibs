@@ -81,7 +81,7 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import { useBemm } from 'bemm'
-import type { LogoScrollerProps, LogoItem } from './LogoScroller.model'
+import type { LogoScrollerProps } from './LogoScroller.model'
 
 const props = withDefaults(defineProps<LogoScrollerProps>(), {
   variant: 'scroller',
@@ -98,7 +98,7 @@ const { bemm } = useBemm('logo-scroller')
 const duplicatedLogos = computed(() => {
   if (props.variant !== 'scroller') return []
   
-  const logos = props.logos.map((logo, index) => ({
+  const logos = props.logos.map((logo) => ({
     ...logo,
     _setIndex: 0
   }))
