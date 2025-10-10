@@ -5,8 +5,8 @@ Versatile action button with variants, sizes, icons, loading state and link supp
 ## Import
 
 ```ts
-import { Button } from '@sil/ui'
-import '@sil/ui/style.css'
+import { Button } from 'hukibs'
+import 'hukibs/style.css'
 ```
 
 ## Usage
@@ -58,4 +58,4 @@ ButtonGroupProps:
 ## Styling
 
 - Uses CSS variables for theming: `--button-color`, `--button-color-text`, etc.
-- Ensure the library stylesheet is loaded: `import '@sil/ui/style.css'`.
+- Ensure the library stylesheet is loaded: `import 'hukibs/style.css'`.

@@ -5,8 +5,8 @@ Transient notification messages with type and position variants. Use the `toastS
 ## Import
 
 ```ts
-import { toastService } from '@sil/ui'
-import '@sil/ui/style.css'
+import { toastService } from 'hukibs'
+import 'hukibs/style.css'
 ```
 
 ## Service Usage
@@ -34,8 +34,8 @@ toastService.show({
 </template>
 
 <script setup lang="ts">
-import Toast from '@sil/ui/dist/index.es.js'
-// If you export Toast as a named export, use: import { Toast } from '@sil/ui'
+import Toast from 'hukibs/dist/index.es.js'
+// If you export Toast as a named export, use: import { Toast } from 'hukibs'
 </script>
 ```
 

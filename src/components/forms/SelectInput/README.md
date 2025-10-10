@@ -5,8 +5,8 @@ Single/multi select input supporting grouped options and searchability.
 ## Import
 
 ```ts
-import { SelectInput } from '@sil/ui'
-import '@sil/ui/style.css'
+import { SelectInput } from 'hukibs'
+import 'hukibs/style.css'
 ```
 
 ## Usage

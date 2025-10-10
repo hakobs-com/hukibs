@@ -5,8 +5,8 @@ Small status label with color and variant options.
 ## Import
 
 ```ts
-import { Badge } from '@sil/ui'
-import '@sil/ui/style.css'
+import { Badge } from 'hukibs'
+import 'hukibs/style.css'
 ```
 
 ## Usage

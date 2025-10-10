@@ -5,8 +5,8 @@ Responsive layout container with configurable max width and fluid behavior.
 ## Import
 
 ```ts
-import { Container } from '@sil/ui'
-import '@sil/ui/style.css'
+import { Container } from 'hukibs'
+import 'hukibs/style.css'
 ```
 
 ## Usage

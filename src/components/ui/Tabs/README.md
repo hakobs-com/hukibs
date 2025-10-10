@@ -5,8 +5,8 @@ Accessible tab system with `Tabs`, `Tab`, and `TabPanel` components.
 ## Import
 
 ```ts
-import { Tabs, Tab, TabPanel } from '@sil/ui'
-import '@sil/ui/style.css'
+import { Tabs, Tab, TabPanel } from 'hukibs'
+import 'hukibs/style.css'
 ```
 
 ## Usage

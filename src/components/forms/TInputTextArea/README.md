@@ -5,8 +5,8 @@ Multi-line text area input with consistent styling and optional auto-size.
 ## Import
 
 ```ts
-import { TInputTextArea } from '@sil/ui'
-import '@sil/ui/style.css'
+import { TInputTextArea } from 'hukibs'
+import 'hukibs/style.css'
 ```
 
 ## Usage

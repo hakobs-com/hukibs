@@ -5,8 +5,8 @@ Contextual menu system with panel and items for actions.
 ## Import
 
 ```ts
-import { ContextMenu, ContextPanel, ContextMenuItems } from '@sil/ui'
-import '@sil/ui/style.css'
+import { ContextMenu, ContextPanel, ContextMenuItems } from 'hukibs'
+import 'hukibs/style.css'
 ```
 
 ## Usage

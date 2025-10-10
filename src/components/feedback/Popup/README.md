@@ -5,8 +5,8 @@ Modal dialog system with a component API and a service API (confirm, prompt, inp
 ## Import
 
 ```ts
-import { Popup, popupService } from '@sil/ui'
-import '@sil/ui/style.css'
+import { Popup, popupService } from 'hukibs'
+import 'hukibs/style.css'
 ```
 
 ## Component Usage
@@ -25,7 +25,7 @@ import '@sil/ui/style.css'
 
 <script setup lang="ts">
 import { ref } from 'vue'
-import { Button, Popup } from '@sil/ui'
+import { Button, Popup } from 'hukibs'
 
 const open = ref(false)
 const confirm = () => {
@@ -38,7 +38,7 @@ const confirm = () => {
 ## Service Usage
 
 ```ts
-import { popupService } from '@sil/ui'
+import { popupService } from 'hukibs'
 
 // Confirm
 const ok = await popupService.confirm({
@@ -71,7 +71,7 @@ For convenience, use `PopupWrapper` to wrap arbitrary content with a trigger and
 </template>
 
 <script setup lang="ts">
-import { Button, PopupWrapper } from '@sil/ui'
+import { Button, PopupWrapper } from 'hukibs'
 import InviteForm from './InviteForm.vue'
 </script>
 ```

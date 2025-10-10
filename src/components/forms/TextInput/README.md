@@ -5,8 +5,8 @@ Standard text input with label, validation, and consistent styling.
 ## Import
 
 ```ts
-import { TextInput } from '@sil/ui'
-import '@sil/ui/style.css'
+import { TextInput } from 'hukibs'
+import 'hukibs/style.css'
 ```
 
 ## Usage

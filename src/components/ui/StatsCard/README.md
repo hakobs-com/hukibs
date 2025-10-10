@@ -5,8 +5,8 @@ Card for displaying a statistic with label, value, optional trend and icon.
 ## Import
 
 ```ts
-import { StatsCard } from '@sil/ui'
-import '@sil/ui/style.css'
+import { StatsCard } from 'hukibs'
+import 'hukibs/style.css'
 ```
 
 ## Usage

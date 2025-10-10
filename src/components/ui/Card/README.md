@@ -5,8 +5,8 @@ Flexible content container with header, content, and footer areas. Supports hove
 ## Import
 
 ```ts
-import { Card } from '@sil/ui'
-import '@sil/ui/style.css'
+import { Card } from 'hukibs'
+import 'hukibs/style.css'
 ```
 
 ## Usage

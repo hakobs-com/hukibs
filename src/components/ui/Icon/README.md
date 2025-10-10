@@ -5,8 +5,8 @@ Displays an icon from the open-icon set with size variants and currentColor supp
 ## Import
 
 ```ts
-import { Icon } from '@sil/ui'
-import '@sil/ui/style.css'
+import { Icon } from 'hukibs'
+import 'hukibs/style.css'
 ```
 
 ## Usage

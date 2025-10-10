@@ -5,8 +5,8 @@ Composable table building blocks: `Table`, `TableRow`, and `TableCell` for displ
 ## Import
 
 ```ts
-import { Table, TableRow, TableCell } from '@sil/ui'
-import '@sil/ui/style.css'
+import { Table, TableRow, TableCell } from 'hukibs'
+import 'hukibs/style.css'
 ```
 
 ## Usage

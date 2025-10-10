@@ -5,8 +5,8 @@ Text input specialized for search, with built-in search icon and clear behavior.
 ## Import
 
 ```ts
-import { SearchInput } from '@sil/ui'
-import '@sil/ui/style.css'
+import { SearchInput } from 'hukibs'
+import 'hukibs/style.css'
 ```
 
 ## Usage

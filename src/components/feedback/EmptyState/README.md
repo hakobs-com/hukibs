@@ -5,8 +5,8 @@ Friendly placeholder for empty content areas with icon, title and description.
 ## Import
 
 ```ts
-import { EmptyState } from '@sil/ui'
-import '@sil/ui/style.css'
+import { EmptyState } from 'hukibs'
+import 'hukibs/style.css'
 ```
 
 ## Usage
