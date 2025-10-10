@@ -141,8 +141,7 @@ const controlClasses = computed(() => [
 ])
 
 // Event handlers
-const handleChange = (event: Event) => {
-  const target = event.target as HTMLInputElement
+const handleChange = (_event: Event) => {
   // Handled by the computed setter
   nextTick(() => {
     emit('change', internalValue.value)

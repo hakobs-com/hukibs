@@ -83,7 +83,6 @@ const modelValue = defineModel<string>()
 const emit = defineEmits<{
   'update:modelValue': [value: string]
   blur: [event: FocusEvent]
-  validity: [isValid: boolean]
   strength: [strength: number]
 }>()
 
@@ -166,20 +165,22 @@ const displayError = computed(() => {
     return 'Password does not meet all requirements'
   }
   
-  return null
+  return undefined
 })
 
-const handleUpdate = (value: string) => {
+const handleUpdate = (value: string | undefined) => {
+  if (value === undefined) return
+  
   modelValue.value = value
   emit('update:modelValue', value)
   emit('strength', strengthScore.value)
-  emit('validity', isValidPassword.value)
+  // emit('validity', isValidPassword.value)
 }
 
 const handleBlur = (event: FocusEvent) => {
   emit('blur', event)
   showRequirements.value = true
-  emit('validity', isValidPassword.value)
+  // emit('validity', isValidPassword.value)
 }
 
 const togglePasswordVisibility = () => {

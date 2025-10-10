@@ -11,8 +11,8 @@
     
     <div class="radio-group-options" :class="optionsClasses">
       <Radio
-        v-for="(option, index) in normalizedOptions"
-        :key="typeof option === 'object' ? option.value : option"
+        v-for="option in normalizedOptions"
+        :key="String(typeof option === 'object' ? option.value : option)"
         :model-value="modelValue"
         :value="typeof option === 'object' ? option.value : option"
         :label="typeof option === 'object' ? option.label : String(option)"
@@ -24,9 +24,7 @@
         :ripple="ripple"
         :error="error"
         :name="groupName"
-        @update:model-value="handleUpdate"
-        @change="handleChange"
-      />
+          />
     </div>
     
     <div v-if="error && error.length" class="radio-group-errors">
@@ -40,7 +38,7 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import { useId } from '../../../composables/useId'
-import { Radio } from './Radio'
+import Radio from './Radio.vue'
 import type { RadioGroupProps, RadioOption } from './Radio.model'
 
 const props = withDefaults(defineProps<RadioGroupProps>(), {
@@ -51,11 +49,6 @@ const props = withDefaults(defineProps<RadioGroupProps>(), {
 })
 
 const modelValue = defineModel<string | number | boolean>()
-
-const emit = defineEmits<{
-  'update:modelValue': [value: string | number | boolean]
-  change: [value: string | number | boolean]
-}>()
 
 const groupName = useId('radio-group')
 
@@ -91,16 +84,6 @@ const optionsClasses = computed(() => [
   `radio-group-options--${props.direction}`
 ])
 
-// Event handlers
-const handleUpdate = (value: string | number | boolean) => {
-  modelValue.value = value
-  emit('update:modelValue', value)
-  emit('change', value)
-}
-
-const handleChange = (value: string | number | boolean) => {
-  emit('change', value)
-}
 </script>
 
 <style lang="scss" scoped>

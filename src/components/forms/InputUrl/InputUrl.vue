@@ -71,8 +71,7 @@ const emit = defineEmits<{
   validity: [isValid: boolean]
 }>()
 
-// URL validation regex - more comprehensive
-const urlRegex = /^https?:\/\/(?:[-\w.])+(?:\:[0-9]+)?(?:\/(?:[\w\/_.])*(?:\?(?:[\w&=%.])*)?(?:\#(?:[\w.])*)?)?$/
+// URL validation uses native URL API for better accuracy
 
 const isValidUrl = computed(() => {
   if (!props.validate || !modelValue.value) return true
@@ -130,10 +129,12 @@ const displayError = computed(() => {
     return 'Please enter a valid URL'
   }
   
-  return null
+  return undefined
 })
 
-const handleInput = (value: string) => {
+const handleInput = (value: string | undefined) => {
+  if (value === undefined) return
+  
   modelValue.value = value
   emit('update:modelValue', value)
   

@@ -34,7 +34,7 @@
           <button
             type="button"
             class="number-input-control number-input-control--up"
-            :disabled="disabled || readonly || (max !== undefined && internalValue >= max)"
+            :disabled="disabled || readonly || (max !== undefined && internalValue !== null && internalValue >= max)"
             @click="increment"
           >
             <Icon name="chevron-up" />
@@ -42,7 +42,7 @@
           <button
             type="button"
             class="number-input-control number-input-control--down"
-            :disabled="disabled || readonly || (min !== undefined && internalValue <= min)"
+            :disabled="disabled || readonly || (min !== undefined && internalValue !== null && internalValue <= min)"
             @click="decrement"
           >
             <Icon name="chevron-down" />
@@ -89,7 +89,7 @@ const internalValue = ref<number | null>(modelValue.value ?? null)
 // Watch for external changes
 watch(() => props.modelValue, (newValue) => {
   if (newValue !== internalValue.value) {
-    internalValue.value = newValue
+    internalValue.value = newValue ?? null
   }
 })
 
@@ -125,8 +125,8 @@ const applyPrecision = (value: number): number => {
 }
 
 // Event handlers
-const handleInput = (value: string) => {
-  if (value === '') {
+const handleInput = (value: string | undefined) => {
+  if (!value) {
     internalValue.value = null
     modelValue.value = null
     return

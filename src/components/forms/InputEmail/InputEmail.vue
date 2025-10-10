@@ -60,7 +60,9 @@ const computedError = computed(() => {
   return props.error
 })
 
-const handleUpdate = (value: string) => {
+const handleUpdate = (value: string | undefined) => {
+  if (value === undefined) return
+  
   modelValue.value = value
   
   // Emit validity if validation is enabled

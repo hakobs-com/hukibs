@@ -136,7 +136,6 @@ const formatPhoneNumber = (phone: string, country: Country): string => {
   if (!props.autoFormat) return phone
   
   const digits = phone.replace(/\D/g, '')
-  const format = country.format.replace(/X/g, '')
   
   let formatted = ''
   let digitIndex = 0
@@ -157,7 +156,7 @@ const parsePhoneNumber = (phone: string): string => {
   return phone.replace(/\D/g, '')
 }
 
-const isValidPhoneNumber = (phone: string, country: Country): boolean => {
+const isValidPhoneNumber = (phone: string, _country: Country): boolean => {
   const digits = parsePhoneNumber(phone)
   const minLength = 10 // Most countries require at least 10 digits
   const maxLength = 15 // International maximum
@@ -181,7 +180,7 @@ const displayError = computed(() => {
     return 'Please enter a valid phone number'
   }
   
-  return null
+  return undefined
 })
 
 const autocomplete = computed(() => 
@@ -191,10 +190,12 @@ const autocomplete = computed(() =>
 const prefixIcon = computed(() => 'phone')
 
 // Event handlers
-const handleInput = (value: string) => {
+const handleInput = (value: string | undefined) => {
+  if (!value) return
+  
   rawPhone.value = value
   
-  if (props.international && showCountrySelector.value) {
+  if (props.international && props.showCountrySelector) {
     const internationalValue = `${currentCountry.value.dialCode} ${parsePhoneNumber(value)}`
     modelValue.value = internationalValue
   } else {

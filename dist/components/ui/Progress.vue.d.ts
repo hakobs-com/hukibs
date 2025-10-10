@@ -40,8 +40,8 @@ declare const __VLS_component: import('vue').DefineComponent<import('vue').Extra
     size: "small" | "medium" | "large";
     showPercentage: boolean;
     value: number;
-    max: number;
     indeterminate: boolean;
+    max: number;
     showBar: boolean;
     showPercentageInBar: boolean;
 }, {}, {}, {}, string, import('vue').ComponentProvideOptions, true, {}, any>;
