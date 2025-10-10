@@ -1,15 +1,15 @@
 {
-  "name": "@sil/ui",
+  "name": "hukibs",
   "version": "0.1.7",
   "description": "A modern Vue 3 UI component library with CSS custom properties theming",
   "type": "module",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/silvandiepen/sil-ui.git"
+    "url": "git+https://github.com/silvandiepen/Hukibs.git"
   },
-  "homepage": "https://github.com/silvandiepen/sil-ui#readme",
+  "homepage": "https://github.com/silvandiepen/Hukibs#readme",
   "bugs": {
-    "url": "https://github.com/silvandiepen/sil-ui/issues"
+    "url": "https://github.com/silvandiepen/Hukibs/issues"
   },
   "main": "./dist/index.es.js",
   "module": "./dist/index.es.js",

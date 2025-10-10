@@ -1,4 +1,4 @@
-# SilUI Component Organization Plan
+# Hukibs Component Organization Plan
 
 ## Current Usage Analysis (from @skumize/ui)
 - **Most Used**: Icon (35), Button (26), Container (17), Card (15)

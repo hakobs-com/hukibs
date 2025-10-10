@@ -1,6 +1,6 @@
-# SilUI
+# Hukibs
 
-[![Deploy Docs](https://github.com/silvandiepen/sil-ui/actions/workflows/deploy-docs.yml/badge.svg)](https://github.com/silvandiepen/sil-ui/actions/workflows/deploy-docs.yml)
+[![Deploy Docs](https://github.com/silvandiepen/Hukibs/actions/workflows/deploy-docs.yml/badge.svg)](https://github.com/silvandiepen/Hukibs/actions/workflows/deploy-docs.yml)
 
 A modern, lightweight Vue 3 component library focused on developer experience and design consistency.
 
@@ -71,11 +71,11 @@ Components for structuring page layouts (see overview links above).
 ## 🚀 Installation
 
 ```bash
-npm install @sil/ui
+npm install hukibs
 # or
-pnpm add @sil/ui
+pnpm add hukibs
 # or
-yarn add @sil/ui
+yarn add hukibs
 ```
 
 ## 📖 Usage
@@ -86,7 +86,7 @@ yarn add @sil/ui
 // main.ts
 import { createApp } from 'vue'
 import App from './App.vue'
-import '@sil/ui/style.css' // Import SilUI styles
+import 'hukibs/style.css' // Import Hukibs styles
 
 const app = createApp(App)
 app.mount('#app')
@@ -94,11 +94,11 @@ app.mount('#app')
 
 ### Using SCSS Mixins
 
-If you want to use SilUI's SCSS mixins and customize theming:
+If you want to use Hukibs' SCSS mixins and customize theming:
 
 ```scss
 // In your app's main SCSS file
-@use "@sil/ui/style.scss" as silui;
+@use "hukibs/style.scss" as hukibs;
 
 // Use the mixins
 @include silui.app();
@@ -135,8 +135,8 @@ If you want to use SilUI's SCSS mixins and customize theming:
 
 <script setup lang="ts">
 import { ref } from 'vue'
-import { Container, Card, SearchInput, Button, Icon } from '@sil/ui'
-import '@sil/ui/style.css' // Import the styles
+import { Container, Card, SearchInput, Button, Icon } from 'hukibs'
+import 'hukibs/style.css' // Import the styles
 
 const searchQuery = ref('')
 
@@ -225,7 +225,7 @@ const performSearch = () => {
 
 ## 🎨 Theming
 
-SilUI uses CSS custom properties for theming. Override these variables to customize the appearance:
+Hukibs uses CSS custom properties for theming. Override these variables to customize the appearance:
 
 ```css
 :root {
@@ -316,7 +316,7 @@ All components follow these patterns:
 - [x] SettingsLayout
 
 ### Phase 5: Migration
-- [ ] Update all @skumize/ui imports to SilUI
+- [ ] Update all @skumize/ui imports to Hukibs
 - [ ] Remove @skumize/ui dependency
 - [ ] Comprehensive documentation
 - [ ] Storybook examples

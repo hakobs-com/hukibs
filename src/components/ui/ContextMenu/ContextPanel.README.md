@@ -5,8 +5,8 @@ Clickable/hoverable panel that opens a contextual menu or panel at a given posit
 ## Import
 
 ```ts
-import { ContextPanel } from '@sil/ui'
-import '@sil/ui/style.css'
+import { ContextPanel } from 'hukibs'
+import 'hukibs/style.css'
 ```
 
 ## Usage

@@ -5,8 +5,8 @@ Renders a list of contextual actions (labels, icons, separators) processed from 
 ## Import
 
 ```ts
-import { ContextMenuItems } from '@sil/ui'
-import '@sil/ui/style.css'
+import { ContextMenuItems } from 'hukibs'
+import 'hukibs/style.css'
 ```
 
 ## Usage

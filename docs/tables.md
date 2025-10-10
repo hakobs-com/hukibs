@@ -1,6 +1,6 @@
 # Tables
 
-SilUI provides two table approaches:
+Hukibs provides two table approaches:
 
 - UI Table building blocks: lightweight components for display tables.
   - [Table](/components/ui/Table)

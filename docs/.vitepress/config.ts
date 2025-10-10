@@ -3,7 +3,7 @@ import { resolve } from 'path'
 
 export default defineConfig({
   base: process.env.VITEPRESS_BASE || '/',
-  title: 'SilUI',
+  title: 'Hukibs',
   description: 'Vue 3 UI component library',
   themeConfig: {
     nav: [
@@ -32,7 +32,7 @@ export default defineConfig({
   vite: {
     resolve: {
       alias: {
-        '@sil/ui': resolve(__dirname, '../../src')
+        'hukibs': resolve(__dirname, '../../src')
       }
     }
   }

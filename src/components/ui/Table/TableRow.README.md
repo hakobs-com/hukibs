@@ -5,8 +5,8 @@ Row component used with the UI `Table` for flexible table layouts.
 ## Import
 
 ```ts
-import { TableRow } from '@sil/ui'
-import '@sil/ui/style.css'
+import { TableRow } from 'hukibs'
+import 'hukibs/style.css'
 ```
 
 ## Usage
