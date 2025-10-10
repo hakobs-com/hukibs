@@ -38,8 +38,6 @@ jobs:
         run: pnpm install --no-frozen-lockfile
 
       - name: Build docs
-        env:
-          VITEPRESS_BASE: /${{ github.event.repository.name }}/
         run: |
           pnpm run docs:sync
           pnpm run docs:gen
