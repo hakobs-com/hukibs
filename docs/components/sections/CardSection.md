@@ -5,9 +5,81 @@ A versatile section component for displaying a grid of cards with optional heade
 ## Import
 
 ```ts
-import { CardSection } from '@sil/ui'
-import '@sil/ui/style.css'
+import { CardSection } from 'hukibs'
+import 'hukibs/style.css'
 ```
+
+<script setup>
+const cardsBasic = [
+  {
+    id: '1',
+    icon: 'compass',
+    title: 'Strategy',
+    subtitle: 'Planning & Direction',
+    content: 'We help you define your business strategy and create a roadmap for success.',
+    cta: { label: 'Learn More', color: 'primary', link: '#' }
+  },
+  {
+    id: '2',
+    icon: 'rocket',
+    title: 'Development',
+    subtitle: 'Build & Deploy',
+    content: 'Our team builds high-quality applications using modern technologies.',
+    cta: { label: 'Learn More', color: 'success', link: '#' }
+  },
+  {
+    id: '3',
+    icon: 'star-m',
+    title: 'Support',
+    subtitle: '24/7 Assistance',
+    content: 'Round-the-clock support to ensure your applications run smoothly.',
+    cta: { label: 'Learn More', color: 'warning', link: '#' }
+  }
+]
+
+const cardsImages = [
+  {
+    id: '1',
+    image: 'https://via.placeholder.com/300x200/e1f5fe/01579b?text=Project+1',
+    title: 'E-commerce Platform',
+    subtitle: 'Web Development',
+    content: 'A modern e-commerce solution with advanced features and seamless user experience.',
+    cta: { label: 'View Project', link: '#' }
+  },
+  {
+    id: '2',
+    image: 'https://via.placeholder.com/300x200/e8f5e8/2e7d32?text=Project+2',
+    title: 'Mobile App',
+    subtitle: 'iOS & Android',
+    content: 'Cross-platform mobile application with real-time synchronization and offline support.',
+    cta: { label: 'View Project', link: '#' }
+  }
+]
+
+const cardsPricing = [
+  {
+    id: '1',
+    title: 'Starter',
+    subtitle: '$9/month',
+    content: 'Perfect for small projects and getting started.',
+    cta: { label: 'Get Started', color: 'primary' }
+  },
+  {
+    id: '2',
+    title: 'Professional',
+    subtitle: '$29/month',
+    content: 'Advanced features for growing businesses.',
+    cta: { label: 'Get Started', color: 'success' }
+  },
+  {
+    id: '3',
+    title: 'Enterprise',
+    subtitle: 'Custom pricing',
+    content: 'Tailored solutions for large organizations.',
+    cta: { label: 'Contact Sales', color: 'warning' }
+  }
+]
+</script>
 
 ## Usage
 
@@ -17,34 +89,10 @@ import '@sil/ui/style.css'
   <CardSection 
     title="Our Services"
     description="We offer a wide range of services to help your business grow."
-    :cards="[
-      {
-        id: '1',
-        icon: 'compass',
-        title: 'Strategy',
-        subtitle: 'Planning & Direction',
-        content: 'We help you define your business strategy and create a roadmap for success.',
-        cta: { label: 'Learn More', color: 'primary', link: '#' }
-      },
-      {
-        id: '2',
-        icon: 'rocket',
-        title: 'Development',
-        subtitle: 'Build & Deploy',
-        content: 'Our team builds high-quality applications using modern technologies.',
-        cta: { label: 'Learn More', color: 'success', link: '#' }
-      },
-      {
-        id: '3',
-        icon: 'star-m',
-        title: 'Support',
-        subtitle: '24/7 Assistance',
-        content: 'Round-the-clock support to ensure your applications run smoothly.',
-        cta: { label: 'Learn More', color: 'warning', link: '#' }
-      }
-    ]
+    :cards="cardsBasic"
     :columns="3"
   />
+  
 </Example>
 
 ```vue
@@ -84,24 +132,7 @@ const cards = [
   <CardSection 
     title="Featured Projects"
     description="Check out some of our recent work."
-    :cards="[
-      {
-        id: '1',
-        image: 'https://via.placeholder.com/300x200/e1f5fe/01579b?text=Project+1',
-        title: 'E-commerce Platform',
-        subtitle: 'Web Development',
-        content: 'A modern e-commerce solution with advanced features and seamless user experience.',
-        cta: { label: 'View Project', link: '#' }
-      },
-      {
-        id: '2',
-        image: 'https://via.placeholder.com/300x200/e8f5e8/2e7d32?text=Project+2',
-        title: 'Mobile App',
-        subtitle: 'iOS & Android',
-        content: 'Cross-platform mobile application with real-time synchronization and offline support.',
-        cta: { label: 'View Project', link: '#' }
-      }
-    ]
+    :cards="cardsImages"
     :columns="2"
     container-color="var(--color-surface)"
   />
@@ -113,29 +144,7 @@ const cards = [
   <CardSection 
     title="Pricing Plans"
     description="Choose the perfect plan for your needs."
-    :cards="[
-      {
-        id: '1',
-        title: 'Starter',
-        subtitle: '$9/month',
-        content: 'Perfect for small projects and getting started.',
-        cta: { label: 'Get Started', color: 'primary' }
-      },
-      {
-        id: '2',
-        title: 'Professional',
-        subtitle: '$29/month',
-        content: 'Advanced features for growing businesses.',
-        cta: { label: 'Get Started', color: 'success' }
-      },
-      {
-        id: '3',
-        title: 'Enterprise',
-        subtitle: 'Custom pricing',
-        content: 'Tailored solutions for large organizations.',
-        cta: { label: 'Contact Sales', color: 'warning' }
-      }
-    ]
+    :cards="cardsPricing"
     :columns="3"
   >
     <template #footer>
