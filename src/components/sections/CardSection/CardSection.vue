@@ -33,14 +33,14 @@
               <Button 
                 v-if="card.cta.link"
                 :href="card.cta.link"
-                :color="card.cta.color || 'primary'"
+                :color="(card.cta.color || 'primary') as any"
                 size="small"
               >
                 {{ card.cta.label }}
               </Button>
               <Button 
                 v-else
-                :color="card.cta.color || 'primary'"
+                :color="(card.cta.color || 'primary') as any"
                 size="small"
               >
                 {{ card.cta.label }}
@@ -63,7 +63,7 @@ import { BaseSection } from '../BaseSection'
 import { Card, Icon, Button } from '../../ui'
 import type { CardSectionProps } from './CardSection.model'
 
-const props = withDefaults(defineProps<CardSectionProps>(), {
+withDefaults(defineProps<CardSectionProps>(), {
   padding: 'var(--spacing)',
   containerSize: 'large',
   sectionColor: 'transparent',

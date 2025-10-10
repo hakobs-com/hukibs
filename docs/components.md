@@ -42,6 +42,8 @@ This index groups all component docs by category with quick links.
 - [BaseSection](/components/sections/BaseSection)
 - [LogoScroller](/components/sections/LogoScroller)
 - [CardSection](/components/sections/CardSection)
+- [SimpleFooter](/components/sections/SimpleFooter)
+- [PageFooter](/components/sections/PageFooter)
 
 ## Tables
 - [Table (UI)](/components/ui/Table)

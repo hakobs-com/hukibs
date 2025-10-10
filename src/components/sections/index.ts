@@ -1,3 +1,6 @@
 export { BaseSection } from './BaseSection'
 export { LogoScroller } from './LogoScroller'
 export { CardSection } from './CardSection'
+export { SimpleFooter } from './SimpleFooter'
+export { PageFooter } from './PageFooter'
+export type { MenuItem, MenuItemGroup } from './Menu.model'
