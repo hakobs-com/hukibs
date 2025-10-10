@@ -42,7 +42,7 @@ import '@sil/ui/style.css'
         content: 'Round-the-clock support to ensure your applications run smoothly.',
         cta: { label: 'Learn More', color: 'warning', link: '#' }
       }
-    ]"
+    ]
     :columns="3"
   />
 </Example>
@@ -101,7 +101,7 @@ const cards = [
         content: 'Cross-platform mobile application with real-time synchronization and offline support.',
         cta: { label: 'View Project', link: '#' }
       }
-    ]"
+    ]
     :columns="2"
     container-color="var(--color-surface)"
   />
@@ -135,7 +135,7 @@ const cards = [
         content: 'Tailored solutions for large organizations.',
         cta: { label: 'Contact Sales', color: 'warning' }
       }
-    ]"
+    ]
     :columns="3"
   >
     <template #footer>
