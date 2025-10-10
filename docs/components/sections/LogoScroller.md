@@ -114,7 +114,7 @@ const logos = [
 
 ## Props
 
-LogoScrollerProps:
+LogoScrollerProps extends BaseSectionProps:
 - logos: `LogoItem[]` (required) — Array of logo items to display
 - variant: `'scroller' | 'grid'` (optional) — Display variant, defaults to `'scroller'`
 - speed: `'slow' | 'normal' | 'fast'` (optional) — Animation speed for scroller variant, defaults to `'normal'`
@@ -123,6 +123,13 @@ LogoScrollerProps:
 - gridSize: `number` (optional) — Number of columns for grid variant, defaults to `4`
 - logoHeight: `string` (optional) — Height of logo items, defaults to `'40px'`
 - gap: `string` (optional) — Spacing between logos, defaults to `'2rem'`
+
+Plus all BaseSectionProps:
+- padding: `string` (optional) — Section padding
+- containerSize: `'full' | 'large' | 'small'` (optional) — Container size
+- sectionColor: `string` (optional) — Section background color
+- containerColor: `string` (optional) — Container background color
+- label: `string` (optional) — Section label
 
 LogoItem:
 - id: `string` (required) — Unique identifier

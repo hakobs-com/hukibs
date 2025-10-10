@@ -1,14 +1,59 @@
 <template>
-  <div :class="bemm('', [variant])" :data-speed="speed" :data-direction="direction">
-    <div 
-      v-if="variant === 'scroller'" 
-      :class="bemm('track', [pauseOnHover ? 'pause-on-hover' : ''])"
-      :style="{ '--logo-height': logoHeight, '--gap': gap }"
-    >
-      <div :class="bemm('content')">
+  <BaseSection 
+    :padding="padding"
+    :container-size="containerSize"
+    :section-color="sectionColor"
+    :container-color="containerColor"
+    :label="label"
+  >
+    <div :class="bemm('', [variant])" :data-speed="speed" :data-direction="direction">
+      <div 
+        v-if="variant === 'scroller'" 
+        :class="bemm('track', [pauseOnHover ? 'pause-on-hover' : ''])"
+        :style="{ '--logo-height': logoHeight, '--gap': gap }"
+      >
+        <div :class="bemm('content')">
+          <div 
+            v-for="logo in duplicatedLogos" 
+            :key="`${logo.id}-${logo._setIndex}`" 
+            :class="bemm('logo')"
+          >
+            <a v-if="logo.href" :href="logo.href" :class="bemm('link')" target="_blank" rel="noopener noreferrer">
+              <component 
+                v-if="logo.component" 
+                :is="logo.component" 
+                :class="bemm('component')"
+              />
+              <img 
+                v-else-if="logo.src" 
+                :src="logo.src" 
+                :alt="logo.alt || `Logo ${logo.id}`" 
+                :class="bemm('image')"
+              />
+            </a>
+            <component 
+              v-else-if="logo.component" 
+              :is="logo.component" 
+              :class="bemm('component')"
+            />
+            <img 
+              v-else-if="logo.src" 
+              :src="logo.src" 
+              :alt="logo.alt || `Logo ${logo.id}`" 
+              :class="bemm('image')"
+            />
+          </div>
+        </div>
+      </div>
+
+      <div 
+        v-else-if="variant === 'grid'" 
+        :class="bemm('grid')"
+        :style="{ '--grid-size': gridSize, '--logo-height': logoHeight, '--gap': gap }"
+      >
         <div 
-          v-for="logo in duplicatedLogos" 
-          :key="`${logo.id}-${logo._setIndex}`" 
+          v-for="logo in logos" 
+          :key="logo.id" 
           :class="bemm('logo')"
         >
           <a v-if="logo.href" :href="logo.href" :class="bemm('link')" target="_blank" rel="noopener noreferrer">
@@ -38,52 +83,20 @@
         </div>
       </div>
     </div>
-
-    <div 
-      v-else-if="variant === 'grid'" 
-      :class="bemm('grid')"
-      :style="{ '--grid-size': gridSize, '--logo-height': logoHeight, '--gap': gap }"
-    >
-      <div 
-        v-for="logo in logos" 
-        :key="logo.id" 
-        :class="bemm('logo')"
-      >
-        <a v-if="logo.href" :href="logo.href" :class="bemm('link')" target="_blank" rel="noopener noreferrer">
-          <component 
-            v-if="logo.component" 
-            :is="logo.component" 
-            :class="bemm('component')"
-          />
-          <img 
-            v-else-if="logo.src" 
-            :src="logo.src" 
-            :alt="logo.alt || `Logo ${logo.id}`" 
-            :class="bemm('image')"
-          />
-        </a>
-        <component 
-          v-else-if="logo.component" 
-          :is="logo.component" 
-          :class="bemm('component')"
-        />
-        <img 
-          v-else-if="logo.src" 
-          :src="logo.src" 
-          :alt="logo.alt || `Logo ${logo.id}`" 
-          :class="bemm('image')"
-        />
-      </div>
-    </div>
-  </div>
+  </BaseSection>
 </template>
 
 <script setup lang="ts">
 import { computed } from 'vue'
 import { useBemm } from 'bemm'
+import { BaseSection } from '../BaseSection'
 import type { LogoScrollerProps } from './LogoScroller.model'
 
 const props = withDefaults(defineProps<LogoScrollerProps>(), {
+  padding: 'var(--spacing)',
+  containerSize: 'large',
+  sectionColor: 'transparent',
+  containerColor: 'transparent',
   variant: 'scroller',
   speed: 'normal',
   direction: 'left',

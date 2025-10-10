@@ -1,3 +1,5 @@
+import type { BaseSectionProps } from '../BaseSection/BaseSection.model'
+
 export interface LogoItem {
   id: string
   src?: string
@@ -6,7 +8,7 @@ export interface LogoItem {
   component?: any
 }
 
-export interface LogoScrollerProps {
+export interface LogoScrollerProps extends BaseSectionProps {
   logos: LogoItem[]
   variant?: 'scroller' | 'grid'
   speed?: 'slow' | 'normal' | 'fast'
