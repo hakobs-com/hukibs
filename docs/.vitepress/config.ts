@@ -21,6 +21,7 @@ export default defineConfig({
           { text: 'Forms', link: '/components#forms' },
           { text: 'Feedback', link: '/components#feedback' },
           { text: 'Layout', link: '/components#layout' },
+          { text: 'Sections', link: '/components#sections' },
           { text: 'Tables', link: '/components#tables' },
           { text: 'Context', link: '/components#context' }
         ]

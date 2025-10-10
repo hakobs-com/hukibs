@@ -38,6 +38,9 @@ This index groups all component docs by category with quick links.
 - [AppSidebar](/components/layout/AppSidebar)
 - [SettingsLayout](/components/layout/SettingsLayout)
 
+## Sections
+- [LogoScroller](/components/sections/LogoScroller)
+
 ## Tables
 - [Table (UI)](/components/ui/Table)
 - [TableRow](/components/ui/TableRow)

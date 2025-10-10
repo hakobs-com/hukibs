@@ -31,6 +31,9 @@ export { AppHeader } from './components/layout/AppHeader'
 export { AppSidebar } from './components/layout/AppSidebar'
 export { SettingsLayout } from './components/layout/SettingsLayout'
 
+// Section Components
+export { LogoScroller } from './components/sections/LogoScroller'
+
 // Feedback Components
 export { default as Popup } from './components/feedback/Popup/Popup.vue'
 export { default as PopupSlot } from './components/feedback/Popup/PopupSlot.vue'
@@ -50,6 +53,7 @@ export type { OptionItemProps } from './components/ui/OptionItem'
 export type { AppHeaderProps, AppHeaderNavItem } from './components/layout/AppHeader'
 export type { AppSidebarProps, AppSidebarNavItem, AppSidebarSection, AppSidebarUserInfo } from './components/layout/AppSidebar'
 export type { SettingsLayoutProps, SettingsLayoutSection } from './components/layout/SettingsLayout'
+export type { LogoScrollerProps, LogoItem } from './components/sections/LogoScroller'
 
 // Main install function for Vue app
 import type { App } from 'vue'
