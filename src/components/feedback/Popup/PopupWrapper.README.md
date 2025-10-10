@@ -31,6 +31,17 @@ const handleSubmitted = () => {
 </script>
 ```
 
+## Live Example
+
+<Example>
+  <PopupWrapper title="Live Popup" description="This is a live example">
+    <template #trigger>
+      <Button>Open Popup</Button>
+    </template>
+    <div>Popup content</div>
+  </PopupWrapper>
+</Example>
+
 Slots:
 - `trigger`: element that opens the popup
 - default: content of the popup
