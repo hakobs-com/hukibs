@@ -29,14 +29,20 @@ import {
   AppSidebar,
   SettingsLayout,
   Popup,
-  Popup as PopupComponent,
-  Popup as PopupDialog,
-  Popup as Modal,
   PopupWrapper,
   Toast,
   Tooltip,
   Alert,
-  EmptyState
+  EmptyState,
+  // Forms
+  TextInput,
+  SearchInput,
+  SelectInput,
+  TInputTextArea,
+  // Context
+  ContextMenu,
+  ContextPanel,
+  ContextMenuItems
 } from 'hukibs'
 
 // Example wrapper component (light styling)
@@ -79,10 +85,20 @@ const theme: Theme = {
     app.component('Alert', Alert)
     app.component('EmptyState', EmptyState)
 
+    // Forms
+    app.component('TextInput', TextInput)
+    app.component('SearchInput', SearchInput)
+    app.component('SelectInput', SelectInput)
+    app.component('TInputTextArea', TInputTextArea)
+
+    // Context
+    app.component('ContextMenu', ContextMenu)
+    app.component('ContextPanel', ContextPanel)
+    app.component('ContextMenuItems', ContextMenuItems)
+
     // Docs helpers
     app.component('Example', Example)
   }
 }
 
 export default theme
-
