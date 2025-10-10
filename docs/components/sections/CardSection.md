@@ -176,7 +176,7 @@ const cards = [
       content: 'Visionary leader with 15+ years of experience in technology.',
       color: '#3b82f6'
     }
-  ]"
+  ]
   :columns="4"
 />
 ```
