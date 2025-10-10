@@ -31,11 +31,15 @@ toastService.show({
 ```vue
 <template>
   <Toast />
+  <Example>
+    <Button @click="notify">Show Toast</Button>
+  </Example>
 </template>
 
 <script setup lang="ts">
-import Toast from 'hukibs/dist/index.es.js'
-// If you export Toast as a named export, use: import { Toast } from 'hukibs'
+import { Toast, Button, toastService } from 'hukibs'
+
+const notify = () => toastService.success('Saved!')
 </script>
 ```
 

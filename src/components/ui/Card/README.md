@@ -2,6 +2,14 @@
 
 Flexible content container with header, content, and footer areas. Supports hover/elevated variants and color accents.
 
+## Live Example
+
+<Example>
+  <Card title="Basic Card">Content goes here</Card>
+  <Card hoverable color="primary">Hoverable primary card</Card>
+  <Card variant="elevated">Elevated</Card>
+</Example>
+
 ## Import
 
 ```ts
