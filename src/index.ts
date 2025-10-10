@@ -21,6 +21,19 @@ export { TextInput } from './components/forms/TextInput'
 export { TextInput as TInputText } from './components/forms/TextInput'
 export { SelectInput } from './components/forms/SelectInput'
 export { TInputTextArea } from './components/forms/TInputTextArea'
+
+// New specialized form inputs
+export { InputEmail } from './components/forms/InputEmail'
+export { InputPassword } from './components/forms/InputPassword'
+export { InputNumber } from './components/forms/InputNumber'
+export { InputPhone } from './components/forms/InputPhone'
+export { InputUrl } from './components/forms/InputUrl'
+
+// Selection components
+export { Checkbox } from './components/forms/Checkbox'
+export { Radio, RadioGroup } from './components/forms/Radio'
+export { Toggle } from './components/forms/Toggle'
+
 // Note: BaseInput is internal only, not exported
 
 // Layout Components

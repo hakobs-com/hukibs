@@ -17,11 +17,27 @@ This index groups all component docs by category with quick links.
 - [ThemeToggle](/components/ui/ThemeToggle)
 
 ## Forms
-- [BaseInput](/components/forms/BaseInput)
+
+### Input Components
 - [TextInput](/components/forms/TextInput)
 - [SearchInput](/components/forms/SearchInput)
 - [SelectInput](/components/forms/SelectInput)
 - [TInputTextArea](/components/forms/TInputTextArea)
+
+### Specialized Inputs
+- [InputEmail](/components/forms/InputEmail)
+- [InputPassword](/components/forms/InputPassword)
+- [InputNumber](/components/forms/InputNumber)
+- [InputPhone](/components/forms/InputPhone)
+- [InputUrl](/components/forms/InputUrl)
+
+### Selection Components
+- [Checkbox](/components/forms/Checkbox)
+- [Radio](/components/forms/Radio)
+- [Toggle](/components/forms/Toggle)
+
+### Foundation
+- [BaseInput](/components/forms/BaseInput) (Internal)
 
 ## Feedback
 - [Popup](/components/feedback/Popup)
