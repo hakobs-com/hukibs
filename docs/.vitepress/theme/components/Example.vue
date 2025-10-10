@@ -1,9 +1,12 @@
 <template>
-  <div class="vp-example">
-    <div class="vp-example__preview">
-      <slot />
+  <ClientOnly>
+    <div class="vp-example">
+      <div class="vp-example__preview">
+        <slot />
+      </div>
     </div>
-  </div>
+  </ClientOnly>
+  
 </template>
 
 <style scoped>
@@ -17,4 +20,3 @@
   padding: 1rem;
 }
 </style>
-
