@@ -5,8 +5,8 @@ Circular progress indicator for showing loading or completion percentage.
 ## Import
 
 ```ts
-import { CircularProgress } from '@sil/ui'
-import '@sil/ui/style.css'
+import { CircularProgress } from 'hukibs'
+import 'hukibs/style.css'
 ```
 
 ## Usage
@@ -15,6 +15,13 @@ import '@sil/ui/style.css'
 <CircularProgress :value="42" />
 <CircularProgress :value="75" size="large" />
 ```
+
+## Live Example
+
+<Example>
+  <CircularProgress :percentage="42" />
+  <CircularProgress :percentage="75" :size="64" />
+</Example>
 
 ## Props
 

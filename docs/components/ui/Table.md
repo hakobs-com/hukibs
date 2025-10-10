@@ -2,11 +2,17 @@
 
 Composable table building blocks: `Table`, `TableRow`, and `TableCell` for display use-cases.
 
+## Live Example
+
+<Example>
+  <Table :columns="[{ key: 'name', label: 'Name' }, { key: 'age', label: 'Age', align: 'right' }]" :data="[{ name: 'Ada', age: 36 }, { name: 'Linus', age: 54 }]" />
+</Example>
+
 ## Import
 
 ```ts
-import { Table, TableRow, TableCell } from '@sil/ui'
-import '@sil/ui/style.css'
+import { Table, TableRow, TableCell } from 'hukibs'
+import 'hukibs/style.css'
 ```
 
 ## Usage

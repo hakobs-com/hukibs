@@ -5,8 +5,8 @@ Transient notification messages with type and position variants. Use the `toastS
 ## Import
 
 ```ts
-import { toastService } from '@sil/ui'
-import '@sil/ui/style.css'
+import { toastService } from 'hukibs'
+import 'hukibs/style.css'
 ```
 
 ## Service Usage
@@ -31,11 +31,15 @@ toastService.show({
 ```vue
 <template>
   <Toast />
+  <Example>
+    <Button @click="notify">Show Toast</Button>
+  </Example>
 </template>
 
 <script setup lang="ts">
-import Toast from '@sil/ui/dist/index.es.js'
-// If you export Toast as a named export, use: import { Toast } from '@sil/ui'
+import { Toast, Button, toastService } from 'hukibs'
+
+const notify = () => toastService.success('Saved!')
 </script>
 ```
 

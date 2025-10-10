@@ -19,6 +19,12 @@ import '@sil/ui/style.css'
 </PageHeader>
 ```
 
+## Live Example
+
+<Example>
+  <PageHeader title="Settings" description="Manage your preferences" />
+</Example>
+
 ## Props
 
 PageHeaderProps:

@@ -17,6 +17,13 @@ import '@sil/ui/style.css'
 </Section>
 ```
 
+## Live Example
+
+<Example>
+  <Section title="Overview">Content</Section>
+  <Section :centered="true" title="Centered">Centered content</Section>
+</Example>
+
 ## Props
 
 - variant?: `default | hero | cta | alternate`

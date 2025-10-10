@@ -5,8 +5,8 @@ Layouts multiple `Button` components with consistent spacing, alignment and dire
 ## Import
 
 ```ts
-import { ButtonGroup } from '@sil/ui'
-import '@sil/ui/style.css'
+import { ButtonGroup } from 'hukibs'
+import 'hukibs/style.css'
 ```
 
 ## Usage

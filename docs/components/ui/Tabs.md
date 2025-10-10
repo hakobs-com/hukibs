@@ -2,11 +2,23 @@
 
 Accessible tab system with `Tabs`, `Tab`, and `TabPanel` components.
 
+## Live Example
+
+<Example>
+  <Tabs>
+    <Tab id="a" label="One" />
+    <Tab id="b" label="Two" />
+    <TabPanel for="a">First tab content</TabPanel>
+    <TabPanel for="b">Second tab content</TabPanel>
+  </Tabs>
+  
+</Example>
+
 ## Import
 
 ```ts
-import { Tabs, Tab, TabPanel } from '@sil/ui'
-import '@sil/ui/style.css'
+import { Tabs, Tab, TabPanel } from 'hukibs'
+import 'hukibs/style.css'
 ```
 
 ## Usage

@@ -2,11 +2,19 @@
 
 Responsive layout container with configurable max width and fluid behavior.
 
+## Live Example
+
+<Example>
+  <Container max="small">Small</Container>
+  <Container max="medium">Medium</Container>
+  <Container fluid>Fluid</Container>
+</Example>
+
 ## Import
 
 ```ts
-import { Container } from '@sil/ui'
-import '@sil/ui/style.css'
+import { Container } from 'hukibs'
+import 'hukibs/style.css'
 ```
 
 ## Usage

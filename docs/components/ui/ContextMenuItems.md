@@ -5,8 +5,8 @@ Renders a list of contextual actions (labels, icons, separators) processed from 
 ## Import
 
 ```ts
-import { ContextMenuItems } from '@sil/ui'
-import '@sil/ui/style.css'
+import { ContextMenuItems } from 'hukibs'
+import 'hukibs/style.css'
 ```
 
 ## Usage
@@ -16,6 +16,15 @@ import '@sil/ui/style.css'
   <ContextMenuItems :items="items" />
 </ContextMenu>
 ```
+
+## Live Example
+
+<Example>
+  <ContextMenu>
+    <ContextPanel>Open</ContextPanel>
+    <ContextMenuItems :items="[{ label: 'One' }, { label: 'Two' }]" />
+  </ContextMenu>
+</Example>
 
 ## Props
 

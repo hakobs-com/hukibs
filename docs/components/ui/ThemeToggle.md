@@ -5,8 +5,8 @@ Simple control to toggle between light and dark themes by switching CSS variable
 ## Import
 
 ```ts
-import ThemeToggle from '@sil/ui'
-import '@sil/ui/style.css'
+import ThemeToggle from 'hukibs'
+import 'hukibs/style.css'
 ```
 
 ## Usage
@@ -14,3 +14,9 @@ import '@sil/ui/style.css'
 ```vue
 <ThemeToggle />
 ```
+
+## Live Example
+
+<Example>
+  <ThemeToggle />
+</Example>

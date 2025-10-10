@@ -5,8 +5,8 @@ Single/multi select input supporting grouped options and searchability.
 ## Import
 
 ```ts
-import { SelectInput } from '@sil/ui'
-import '@sil/ui/style.css'
+import { SelectInput } from 'hukibs'
+import 'hukibs/style.css'
 ```
 
 ## Usage
@@ -14,6 +14,12 @@ import '@sil/ui/style.css'
 ```vue
 <SelectInput v-model="value" :options="options" placeholder="Choose..." />
 ```
+
+## Live Example
+
+<Example>
+  <SelectInput :options="['Red','Green','Blue']" placeholder="Choose color" />
+</Example>
 
 ## Props
 

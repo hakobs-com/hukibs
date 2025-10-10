@@ -2,11 +2,22 @@
 
 Versatile action button with variants, sizes, icons, loading state and link support.
 
+## Live Example
+
+<Example>
+  <Button>Primary</Button>
+  <Button variant="outline">Outline</Button>
+  <Button variant="ghost">Ghost</Button>
+  <Button color="success">Success</Button>
+  <Button icon="plus">With Icon</Button>
+  <Button :icon-only="true" icon="search" aria-label="Search" />
+</Example>
+
 ## Import
 
 ```ts
-import { Button } from '@sil/ui'
-import '@sil/ui/style.css'
+import { Button } from 'hukibs'
+import 'hukibs/style.css'
 ```
 
 ## Usage
@@ -58,4 +69,4 @@ ButtonGroupProps:
 ## Styling
 
 - Uses CSS variables for theming: `--button-color`, `--button-color-text`, etc.
-- Ensure the library stylesheet is loaded: `import '@sil/ui/style.css'`.
+- Ensure the library stylesheet is loaded: `import 'hukibs/style.css'`.

@@ -5,8 +5,8 @@ Card for displaying a statistic with label, value, optional trend and icon.
 ## Import
 
 ```ts
-import { StatsCard } from '@sil/ui'
-import '@sil/ui/style.css'
+import { StatsCard } from 'hukibs'
+import 'hukibs/style.css'
 ```
 
 ## Usage
@@ -14,6 +14,13 @@ import '@sil/ui/style.css'
 ```vue
 <StatsCard label="Active Users" value="1,024" trend="+12%" icon="users" />
 ```
+
+## Live Example
+
+<Example>
+  <StatsCard label="Revenue" value="$12.4k" layout="compact" icon="graph-up" />
+  <StatsCard label="Completion" :percentage="68" layout="progress-circle" />
+</Example>
 
 ## Props
 

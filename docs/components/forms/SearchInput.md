@@ -5,8 +5,8 @@ Text input specialized for search, with built-in search icon and clear behavior.
 ## Import
 
 ```ts
-import { SearchInput } from '@sil/ui'
-import '@sil/ui/style.css'
+import { SearchInput } from 'hukibs'
+import 'hukibs/style.css'
 ```
 
 ## Usage
@@ -14,6 +14,12 @@ import '@sil/ui/style.css'
 ```vue
 <SearchInput v-model="query" placeholder="Search..." :clearable="true" />
 ```
+
+## Live Example
+
+<Example>
+  <SearchInput placeholder="Search..." :clearable="true" />
+</Example>
 
 ## Props
 

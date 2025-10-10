@@ -15,6 +15,12 @@ import '@sil/ui/style.css'
 <AppSidebar :sections="sections" :user="user" />
 ```
 
+## Live Example
+
+<Example>
+  <AppSidebar :sections="[{ id: 'main', items: [{ label: 'Dashboard', icon: 'home' }, { label: 'Settings', icon: 'settings' }] }]" />
+</Example>
+
 ## Props
 
 AppSidebarProps:

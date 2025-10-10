@@ -5,8 +5,8 @@ Convenience component that manages popup open/close state around a trigger and d
 ## Import
 
 ```ts
-import { PopupWrapper } from '@sil/ui'
-import '@sil/ui/style.css'
+import { PopupWrapper } from 'hukibs'
+import 'hukibs/style.css'
 ```
 
 ## Usage
@@ -22,7 +22,7 @@ import '@sil/ui/style.css'
 </template>
 
 <script setup lang="ts">
-import { Button, PopupWrapper } from '@sil/ui'
+import { Button, PopupWrapper } from 'hukibs'
 import InviteForm from './InviteForm.vue'
 
 const handleSubmitted = () => {
@@ -30,6 +30,17 @@ const handleSubmitted = () => {
 }
 </script>
 ```
+
+## Live Example
+
+<Example>
+  <PopupWrapper title="Live Popup" description="This is a live example">
+    <template #trigger>
+      <Button>Open Popup</Button>
+    </template>
+    <div>Popup content</div>
+  </PopupWrapper>
+</Example>
 
 Slots:
 - `trigger`: element that opens the popup

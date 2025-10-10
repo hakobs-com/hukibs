@@ -5,8 +5,8 @@ Multi-line text area input with consistent styling and optional auto-size.
 ## Import
 
 ```ts
-import { TInputTextArea } from '@sil/ui'
-import '@sil/ui/style.css'
+import { TInputTextArea } from 'hukibs'
+import 'hukibs/style.css'
 ```
 
 ## Usage
@@ -14,6 +14,12 @@ import '@sil/ui/style.css'
 ```vue
 <TInputTextArea v-model="description" label="Description" rows="4" />
 ```
+
+## Live Example
+
+<Example>
+  <TInputTextArea label="Description" placeholder="Write something..." />
+</Example>
 
 ## Props
 

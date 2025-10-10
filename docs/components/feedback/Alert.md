@@ -2,11 +2,19 @@
 
 Banner-style message for success, info, warning, and error states.
 
+## Live Example
+
+<Example>
+  <Alert variant="SUCCESS">Saved successfully</Alert>
+  <Alert variant="WARNING">Heads up!</Alert>
+  <Alert variant="ERROR">Something went wrong</Alert>
+</Example>
+
 ## Import
 
 ```ts
-import { Alert } from '@sil/ui'
-import '@sil/ui/style.css'
+import { Alert } from 'hukibs'
+import 'hukibs/style.css'
 ```
 
 ## Usage
