@@ -70,20 +70,20 @@ $color-info: map.get($extended-colors, 'skyblue') !default;
 
 // Project Colors
 $colors: (
-	'dark': #{$color-dark},
-	'light': #{$color-light},
-	'accent-dark': #{$color-accent-dark},
-	'accent-light': #{$color-accent-light},
-	'primary':  #{$color-primary},
-	'secondary': #{$color-secondary},
-	'tertiary': #{$color-tertiary},
-	'quaternary':  #{$color-quaternary},
-	'quinary': #{$color-quinary},
+	'dark': $color-dark,
+	'light': $color-light,
+	'accent-dark': $color-accent-dark,
+	'accent-light': $color-accent-light,
+	'primary':  $color-primary,
+	'secondary': $color-secondary,
+	'tertiary': $color-tertiary,
+	'quaternary':  $color-quaternary,
+	'quinary': $color-quinary,
 	//
-	'success': #{$color-success},
-	'warning':  #{$color-warning},
-	'error': #{$color-error},
-	'info': #{$color-info},
+	'success': $color-success,
+	'warning':  $color-warning,
+	'error': $color-error,
+	'info': $color-info,
 ) !default;
 
 $color-names: map.keys($colors);

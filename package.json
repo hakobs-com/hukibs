@@ -5,11 +5,11 @@
   "type": "module",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/silvandiepen/Hukibs.git"
+    "url": "git+https://github.com/hakobs-com/hukibs.git"
   },
-  "homepage": "https://github.com/silvandiepen/Hukibs#readme",
+  "homepage": "https://github.com/hakobs-com/hukibs#readme",
   "bugs": {
-    "url": "https://github.com/silvandiepen/Hukibs/issues"
+    "url": "https://github.com/hakobs-com/hukibs/issues"
   },
   "main": "./dist/index.es.js",
   "module": "./dist/index.es.js",
