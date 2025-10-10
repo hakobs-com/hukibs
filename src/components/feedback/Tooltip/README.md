@@ -17,6 +17,14 @@ import '@sil/ui/style.css'
 </Tooltip>
 ```
 
+## Live Example
+
+<Example>
+  <Tooltip text="More info" position="top">
+    <Button>Hover me</Button>
+  </Tooltip>
+</Example>
+
 ## Props
 
 - position?: `top | right | bottom | left` (see `TooltipPosition`)

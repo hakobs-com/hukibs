@@ -15,6 +15,12 @@ import 'hukibs/style.css'
 <SelectInput v-model="value" :options="options" placeholder="Choose..." />
 ```
 
+## Live Example
+
+<Example>
+  <SelectInput :options="['Red','Green','Blue']" placeholder="Choose color" />
+</Example>
+
 ## Props
 
 - modelValue?: `string | null` (or `string[]` when `multiple`)

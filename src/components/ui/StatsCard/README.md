@@ -15,6 +15,13 @@ import 'hukibs/style.css'
 <StatsCard label="Active Users" value="1,024" trend="+12%" icon="users" />
 ```
 
+## Live Example
+
+<Example>
+  <StatsCard label="Revenue" value="$12.4k" layout="compact" icon="graph-up" />
+  <StatsCard label="Completion" :percentage="68" layout="progress-circle" />
+</Example>
+
 ## Props
 
 StatsCardProps:

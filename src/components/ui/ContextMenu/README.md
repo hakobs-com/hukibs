@@ -18,6 +18,15 @@ import 'hukibs/style.css'
  </ContextMenu>
 ```
 
+## Live Example
+
+<Example>
+  <ContextMenu>
+    <ContextPanel>Open Menu</ContextPanel>
+    <ContextMenuItems :items="[{ label: 'Edit' }, { label: 'Delete' }]" />
+  </ContextMenu>
+</Example>
+
 ## Props
 
 - ContextMenuItems: `items` array defining labels, icons, and handlers

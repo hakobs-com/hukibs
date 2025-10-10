@@ -16,6 +16,13 @@ import 'hukibs/style.css'
 <CircularProgress :value="75" size="large" />
 ```
 
+## Live Example
+
+<Example>
+  <CircularProgress :percentage="42" />
+  <CircularProgress :percentage="75" :size="64" />
+</Example>
+
 ## Props
 
 CircularProgressProps:

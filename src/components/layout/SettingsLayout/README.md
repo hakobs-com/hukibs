@@ -15,6 +15,12 @@ import '@sil/ui/style.css'
 <SettingsLayout :sections="sections" />
 ```
 
+## Live Example
+
+<Example>
+  <SettingsLayout :sections="[{ id:'general', label:'General', icon:'settings' }, { id:'account', label:'Account', icon:'user' }]" active-section="general" />
+</Example>
+
 ## Props
 
 SettingsLayoutProps:

@@ -19,6 +19,12 @@ import '@sil/ui/style.css'
 </AppHeader>
 ```
 
+## Live Example
+
+<Example>
+  <AppHeader :nav-items="[{ label: 'Home', href: '#' }, { label: 'Docs', href: '#' }]" />
+</Example>
+
 ## Props
 
 AppHeaderProps:

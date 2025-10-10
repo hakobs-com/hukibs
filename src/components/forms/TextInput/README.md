@@ -15,6 +15,14 @@ import 'hukibs/style.css'
 <TextInput v-model="name" label="Full Name" placeholder="Enter your name" :required="true" />
 ```
 
+## Live Example
+
+<Example>
+  <TextInput label="Name" placeholder="Your name" />
+  <TextInput label="Email" placeholder="you@example.com" />
+  <TextInput label="Disabled" disabled />
+</Example>
+
 ## Props
 
 Extends BaseInput (minus `type`):

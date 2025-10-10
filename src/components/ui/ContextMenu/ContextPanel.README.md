@@ -22,6 +22,17 @@ import 'hukibs/style.css'
 </ContextPanel>
 ```
 
+## Live Example
+
+<Example>
+  <ContextPanel :config="{ position: 'bottom-right' }">
+    <template #trigger>
+      <Button>Open Panel</Button>
+    </template>
+    <div>Panel content</div>
+  </ContextPanel>
+</Example>
+
 ## Props
 
 See `./ContextPanel.model.ts` for `ContextPanelConfig`, `ContextPanelPosition`, and `ContextPanelClickMode`.

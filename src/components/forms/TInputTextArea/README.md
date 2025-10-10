@@ -15,6 +15,12 @@ import 'hukibs/style.css'
 <TInputTextArea v-model="description" label="Description" rows="4" />
 ```
 
+## Live Example
+
+<Example>
+  <TInputTextArea label="Description" placeholder="Write something..." />
+</Example>
+
 ## Props
 
 - modelValue?: string

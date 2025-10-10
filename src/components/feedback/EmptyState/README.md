@@ -15,6 +15,14 @@ import 'hukibs/style.css'
 <EmptyState icon="folder" title="No items" description="Start by creating your first item" />
 ```
 
+## Live Example
+
+<Example>
+  <EmptyState icon="folder" title="Nothing here" description="Add your first item" />
+  <EmptyState icon="info-l" title="Tip" description="Use the button above to add" />
+  
+</Example>
+
 ## Props
 
 - icon?: string

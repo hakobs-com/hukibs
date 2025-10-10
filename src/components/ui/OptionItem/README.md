@@ -15,6 +15,13 @@ import 'hukibs/style.css'
 <OptionItem icon="settings" label="Settings" />
 ```
 
+## Live Example
+
+<Example>
+  <OptionItem icon="settings" label="Settings" />
+  <OptionItem icon="info-l" label="About" />
+</Example>
+
 ## Props
 
 OptionItemProps:

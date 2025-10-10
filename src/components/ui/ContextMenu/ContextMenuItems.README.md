@@ -17,6 +17,15 @@ import 'hukibs/style.css'
 </ContextMenu>
 ```
 
+## Live Example
+
+<Example>
+  <ContextMenu>
+    <ContextPanel>Open</ContextPanel>
+    <ContextMenuItems :items="[{ label: 'One' }, { label: 'Two' }]" />
+  </ContextMenu>
+</Example>
+
 ## Props
 
 - items: `ContextMenuItem[]` — see `./ContextMenu.model.ts`

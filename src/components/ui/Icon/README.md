@@ -2,6 +2,14 @@
 
 Displays an icon from the open-icon set with size variants and currentColor support.
 
+## Live Example
+
+<Example>
+  <Icon name="search" />
+  <Icon name="check" />
+  <Icon name="arrow-right" />
+</Example>
+
 ## Import
 
 ```ts

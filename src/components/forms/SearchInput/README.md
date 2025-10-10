@@ -15,6 +15,12 @@ import 'hukibs/style.css'
 <SearchInput v-model="query" placeholder="Search..." :clearable="true" />
 ```
 
+## Live Example
+
+<Example>
+  <SearchInput placeholder="Search..." :clearable="true" />
+</Example>
+
 ## Props
 
 Extends BaseInput minus `type` and `prefixIcon`:

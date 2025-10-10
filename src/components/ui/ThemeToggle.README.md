@@ -14,3 +14,9 @@ import 'hukibs/style.css'
 ```vue
 <ThemeToggle />
 ```
+
+## Live Example
+
+<Example>
+  <ThemeToggle />
+</Example>
