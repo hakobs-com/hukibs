@@ -1,1 +1,0 @@
-{"version":3,"file":"BaseSection.model.d.ts","sourceRoot":"","sources":["../../../../src/components/sections/BaseSection/BaseSection.model.ts"],"names":[],"mappings":"AAAA,MAAM,WAAW,gBAAgB;IAC/B,OAAO,CAAC,EAAE,MAAM,CAAA;IAChB,aAAa,CAAC,EAAE,MAAM,GAAG,OAAO,GAAG,OAAO,CAAA;IAC1C,YAAY,CAAC,EAAE,MAAM,CAAA;IACrB,cAAc,CAAC,EAAE,MAAM,CAAA;IACvB,KAAK,CAAC,EAAE,MAAM,CAAA;CACf"}

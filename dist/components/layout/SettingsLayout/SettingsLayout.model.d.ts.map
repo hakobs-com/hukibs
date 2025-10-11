@@ -1,1 +1,0 @@
-{"version":3,"file":"SettingsLayout.model.d.ts","sourceRoot":"","sources":["../../../../src/components/layout/SettingsLayout/SettingsLayout.model.ts"],"names":[],"mappings":"AAAA,MAAM,WAAW,qBAAqB;IACpC,EAAE,EAAE,MAAM,CAAC;IACX,KAAK,EAAE,MAAM,CAAC;IACd,IAAI,EAAE,MAAM,CAAC;CACd;AAED,MAAM,WAAW,mBAAmB;IAClC,QAAQ,EAAE,qBAAqB,EAAE,CAAC;IAClC,aAAa,EAAE,MAAM,CAAC;CACvB"}
