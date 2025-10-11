@@ -33,24 +33,24 @@ const { bemm } = useBemm('progress-dialog')
 .progress-dialog {
   padding: var(--space-l);
   min-width: 300px;
-  
+
   &__content {
     text-align: center;
   }
-  
+
   &__title {
-    font-size: var(--font-size-lg);
+    font-size: var(--font-size-l);
     font-weight: var(--font-weight-semibold);
     margin-bottom: var(--space-m);
     color: var(--color-foreground);
   }
-  
+
   &__message {
     font-size: var(--font-size-m);
     color: var(--color-gray);
     margin-bottom: var(--space-l);
   }
-  
+
   &__progress {
     width: 100%;
     height: 8px;
@@ -59,14 +59,14 @@ const { bemm } = useBemm('progress-dialog')
     overflow: hidden;
     margin-bottom: var(--space-m);
   }
-  
+
   &__progress-bar {
     height: 100%;
     background: var(--color-primary);
     border-radius: var(--radius-full);
     transition: width 0.3s ease;
   }
-  
+
   &__percentage {
     font-size: var(--font-size-s);
     color: var(--color-gray);

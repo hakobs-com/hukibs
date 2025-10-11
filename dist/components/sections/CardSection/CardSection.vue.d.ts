@@ -9,18 +9,24 @@ declare const __VLS_component: import('vue').DefineComponent<import('vue').Extra
     sectionColor: string;
     containerColor: string;
     columns: number;
+    scrollable: boolean;
+    scrollDirection: string;
 }>>, {}, {}, {}, {}, import('vue').ComponentOptionsMixin, import('vue').ComponentOptionsMixin, {}, string, import('vue').PublicProps, Readonly<import('vue').ExtractPropTypes<__VLS_WithDefaults<__VLS_TypePropsToRuntimeProps<CardSectionProps>, {
     padding: string;
     containerSize: string;
     sectionColor: string;
     containerColor: string;
     columns: number;
+    scrollable: boolean;
+    scrollDirection: string;
 }>>> & Readonly<{}>, {
     padding: string;
     columns: number;
     containerSize: "full" | "large" | "small";
     sectionColor: string;
     containerColor: string;
+    scrollable: boolean;
+    scrollDirection: "horizontal" | "vertical";
 }, {}, {}, {}, string, import('vue').ComponentProvideOptions, true, {}, any>;
 declare const _default: __VLS_WithTemplateSlots<typeof __VLS_component, ReturnType<typeof __VLS_template>>;
 export default _default;

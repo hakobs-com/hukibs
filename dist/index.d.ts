@@ -34,6 +34,8 @@ export { SettingsLayout } from './components/layout/SettingsLayout';
 export { BaseSection } from './components/sections/BaseSection';
 export { LogoScroller } from './components/sections/LogoScroller';
 export { CardSection } from './components/sections/CardSection';
+export { ContentSection } from './components/sections/ContentSection';
+export { HeroSection } from './components/sections/HeroSection';
 export { SimpleFooter } from './components/sections/SimpleFooter';
 export { PageFooter } from './components/sections/PageFooter';
 export { default as Popup } from './components/feedback/Popup/Popup.vue';
@@ -56,6 +58,8 @@ export type { SettingsLayoutProps, SettingsLayoutSection } from './components/la
 export type { BaseSectionProps } from './components/sections/BaseSection';
 export type { LogoScrollerProps, LogoItem } from './components/sections/LogoScroller';
 export type { CardSectionProps, CardItem } from './components/sections/CardSection';
+export type { ContentSectionProps, ContentItem } from './components/sections/ContentSection';
+export type { HeroSectionProps } from './components/sections/HeroSection';
 export type { SimpleFooterProps } from './components/sections/SimpleFooter';
 export type { PageFooterProps } from './components/sections/PageFooter';
 export type { MenuItem, MenuItemGroup } from './components/sections/Menu.model';

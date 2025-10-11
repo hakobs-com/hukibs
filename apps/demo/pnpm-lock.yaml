@@ -4,13 +4,19 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
+overrides:
+  hukibs: link:../../../../../Library/pnpm/global/5/node_modules/hukibs
+
 importers:
 
   .:
     dependencies:
+      '@faker-js/faker':
+        specifier: ^9.0.0
+        version: 9.9.0
       hukibs:
-        specifier: latest
-        version: 0.0.8(@babel/core@7.28.4)(@jest/types@28.1.3)(jest@28.1.3(@types/node@24.7.1))(vue@3.5.22(typescript@5.9.3))
+        specifier: file:../..
+        version: file:../..(@babel/core@7.28.4)(@jest/types@28.1.3)(jest@28.1.3(@types/node@24.7.1))(vue@3.5.22(typescript@5.9.3))
       vue:
         specifier: ^3.5.0
         version: 3.5.22(typescript@5.9.3)
@@ -741,6 +747,10 @@ packages:
     cpu: [x64]
     os: [win32]
 
+  '@faker-js/faker@9.9.0':
+    resolution: {integrity: sha512-OEl393iCOoo/z8bMezRlJu+GlRGlsKbUAN7jKB6LhnKoqKve5DXRpalbItIIcwnCjs1k/FOPjFzcA6Qn+H+YbA==}
+    engines: {node: '>=18.0.0', npm: '>=9.0.0'}
+
   '@istanbuljs/load-nyc-config@1.1.0':
     resolution: {integrity: sha512-VjeHSlIzpv/NyD3N0YuHfXOPDIixcA1q2ZV98wsMqcYlPmv2n3Yb2lYP9XMElnaFVXg5A7YLTeLu6V84uQDjmQ==}
     engines: {node: '>=8'}
@@ -1375,10 +1385,10 @@ packages:
   html-escaper@2.0.2:
     resolution: {integrity: sha512-H2iMtd0I4Mt5eYiapRdIDjp+XzelXQ0tFE4JS7YFwFevXXMmOp9myNrUvCg0D6ws8iqkRPBfKHgbwig1SmlLfg==}
 
-  hukibs@0.0.8:
-    resolution: {integrity: sha512-yYLE/+esBpXapPED4+N+JORQS+IDP392qpGUnVh3wahK+Y/H1sBNVcrpqddbK6akmtGyugP4Dfv004734jusRA==}
+  hukibs@file:../..:
+    resolution: {directory: ../.., type: directory}
     peerDependencies:
-      vue: ^3.4.0
+      vue: ^3.5.0
 
   human-signals@2.1.0:
     resolution: {integrity: sha512-B4FFZ6q/T2jhhksgkbEW3HBvWIfDW85snkQgawt07S7J5QXTk6BkNV+0yAeZrM5QpMAdYlocGoljn0sJ/WQkFw==}
@@ -2867,6 +2877,8 @@ snapshots:
   '@esbuild/win32-x64@0.21.5':
     optional: true
 
+  '@faker-js/faker@9.9.0': {}
+
   '@istanbuljs/load-nyc-config@1.1.0':
     dependencies:
       camelcase: 5.3.1
@@ -3035,7 +3047,7 @@ snapshots:
       '@jest/schemas': 28.1.3
       '@types/istanbul-lib-coverage': 2.0.6
       '@types/istanbul-reports': 3.0.4
-      '@types/node': 18.19.130
+      '@types/node': 24.7.1
       '@types/yargs': 17.0.33
       chalk: 4.1.2
 
@@ -3195,7 +3207,7 @@ snapshots:
 
   '@types/graceful-fs@4.1.9':
     dependencies:
-      '@types/node': 18.19.130
+      '@types/node': 24.7.1
 
   '@types/istanbul-lib-coverage@2.0.6': {}
 
@@ -3646,7 +3658,7 @@ snapshots:
 
   html-escaper@2.0.2: {}
 
-  hukibs@0.0.8(@babel/core@7.28.4)(@jest/types@28.1.3)(jest@28.1.3(@types/node@24.7.1))(vue@3.5.22(typescript@5.9.3)):
+  hukibs@file:../..(@babel/core@7.28.4)(@jest/types@28.1.3)(jest@28.1.3(@types/node@24.7.1))(vue@3.5.22(typescript@5.9.3)):
     dependencies:
       '@sil/color': 0.5.0(@babel/core@7.28.4)(@jest/types@28.1.3)(jest@28.1.3(@types/node@24.7.1))
       bemm: 1.2.2
@@ -3833,7 +3845,7 @@ snapshots:
     dependencies:
       '@jest/types': 28.1.3
       '@types/graceful-fs': 4.1.9
-      '@types/node': 18.19.130
+      '@types/node': 24.7.1
       anymatch: 3.1.3
       fb-watchman: 2.0.2
       graceful-fs: 4.2.11
@@ -3983,7 +3995,7 @@ snapshots:
   jest-util@28.1.3:
     dependencies:
       '@jest/types': 28.1.3
-      '@types/node': 18.19.130
+      '@types/node': 24.7.1
       chalk: 4.1.2
       ci-info: 3.9.0
       graceful-fs: 4.2.11
@@ -4011,7 +4023,7 @@ snapshots:
 
   jest-worker@28.1.3:
     dependencies:
-      '@types/node': 18.19.130
+      '@types/node': 24.7.1
       merge-stream: 2.0.0
       supports-color: 8.1.1
 

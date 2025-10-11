@@ -27,7 +27,14 @@ export default defineConfig({
           { text: 'Context', link: '/components#context' }
         ]
       },
-      { text: 'Tables', link: '/tables' }
+      { text: 'Tables', link: '/tables' },
+      {
+        text: 'Demo',
+        link: '/demo/',
+        items: [
+          { text: 'CardSection Builder', link: '/demo/card-section-demo' }
+        ]
+      }
     ]
   }
   ,
