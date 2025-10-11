@@ -80,7 +80,9 @@ function applySettings(newConfig: any) {
 }
 </script>
 
-<style scoped>
+<style lang="scss">
+@import 'hukibs/style.css';
+
 .app {
   min-height: 100vh;
 }
