@@ -42,6 +42,10 @@ jobs:
           pnpm run docs:sync
           pnpm run docs:gen
           pnpm run docs:build
+          pnpm -C apps/demo install --no-frozen-lockfile
+          DEMO_BASE=/demo/ pnpm -C apps/demo build
+          mkdir -p docs/.vitepress/dist/demo
+          cp -R apps/demo/dist/* docs/.vitepress/dist/demo/
 
       - name: Setup Pages (non-blocking)
         uses: actions/configure-pages@v5

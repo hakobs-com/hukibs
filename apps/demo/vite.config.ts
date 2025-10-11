@@ -3,6 +3,7 @@ import vue from '@vitejs/plugin-vue'
 import { resolve } from 'path'
 
 export default defineConfig({
+  base: process.env.DEMO_BASE || '/demo/',
   plugins: [vue()],
   resolve: {
     alias: {
@@ -13,4 +14,3 @@ export default defineConfig({
     port: 5175
   }
 })
-
