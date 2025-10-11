@@ -19,7 +19,9 @@
       "Bash(rm:*)",
       "Bash(ls:*)",
       "Bash(cp:*)",
-      "Bash(cat:*)"
+      "Bash(cat:*)",
+      "Bash(git rm:*)",
+      "Bash(true:*)"
     ],
     "deny": []
   }
