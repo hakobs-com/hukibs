@@ -9,7 +9,8 @@ export default defineConfig({
     nav: [
       { text: 'Guide', link: '/' },
       { text: 'Components', link: '/components' },
-      { text: 'Tables', link: '/tables' }
+      { text: 'Tables', link: '/tables' },
+      { text: 'Demo', link: '/demo/' }
     ],
     sidebar: [
       { text: 'Introduction', link: '/' },
