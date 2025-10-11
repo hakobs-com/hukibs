@@ -1,5 +1,5 @@
 <template>
-  <BaseSection 
+  <BaseSection
     :padding="padding"
     :container-size="containerSize"
     :section-color="sectionColor"
@@ -12,9 +12,9 @@
         <p v-if="description" :class="bemm('description')">{{ description }}</p>
       </header>
 
-      <div :class="bemm('grid')" :style="{ '--columns': columns }">
-        <Card 
-          v-for="card in cards" 
+      <div :class="[bemm('grid'), scrollable ? bemm('grid', 'scrollable') : '']" :style="gridStyle">
+        <Card
+          v-for="card in cards"
           :key="card.id"
           :class="bemm('card')"
           :style="card.color ? { '--card-color': card.color } : {}"
@@ -23,14 +23,14 @@
             <img v-if="card.image" :src="card.image" :alt="card.title" :class="bemm('image')" />
             <Icon v-else-if="card.icon" :name="card.icon" :class="bemm('icon')" />
           </div>
-          
+
           <div :class="bemm('content')">
             <h3 v-if="card.title" :class="bemm('card-title')">{{ card.title }}</h3>
             <p v-if="card.subtitle" :class="bemm('subtitle')">{{ card.subtitle }}</p>
             <p v-if="card.content" :class="bemm('text')">{{ card.content }}</p>
-            
+
             <div v-if="card.cta" :class="bemm('cta')">
-              <Button 
+              <Button
                 v-if="card.cta.link"
                 :href="card.cta.link"
                 :color="(card.cta.color || 'primary') as any"
@@ -38,7 +38,7 @@
               >
                 {{ card.cta.label }}
               </Button>
-              <Button 
+              <Button
                 v-else
                 :color="(card.cta.color || 'primary') as any"
                 size="small"
@@ -58,18 +58,31 @@
 </template>
 
 <script setup lang="ts">
+import { computed } from 'vue'
 import { useBemm } from 'bemm'
 import { BaseSection } from '../BaseSection'
 import { Card, Icon, Button } from '../../ui'
 import type { CardSectionProps } from './CardSection.model'
 
-withDefaults(defineProps<CardSectionProps>(), {
+const props = withDefaults(defineProps<CardSectionProps>(), {
   padding: 'var(--spacing)',
   containerSize: 'large',
   sectionColor: 'transparent',
   containerColor: 'transparent',
-  columns: 3
+  columns: 3,
+  scrollable: false,
+  scrollDirection: 'horizontal'
 })
+
+// Computed styles for scrollable grid
+const gridStyle = computed(() => ({
+  '--columns': props.columns,
+  '--flex-direction': props.scrollDirection === 'horizontal' ? 'row' : 'column',
+  '--overflow-x': props.scrollDirection === 'horizontal' ? 'auto' : 'hidden',
+  '--overflow-y': props.scrollDirection === 'vertical' ? 'auto' : 'hidden',
+  '--padding-bottom': props.scrollDirection === 'horizontal' ? 'var(--spacing-md, 1rem)' : '0',
+  '--min-width': props.scrollable && props.scrollDirection === 'horizontal' ? '300px' : 'auto'
+}))
 
 const { bemm } = useBemm('card-section')
 </script>
@@ -101,70 +114,87 @@ const { bemm } = useBemm('card-section')
     grid-template-columns: repeat(var(--columns, 3), 1fr);
     gap: var(--spacing-lg, 2rem);
     margin-bottom: var(--spacing-xl, 3rem);
-  }
 
-  &__card {
-    --card-color: var(--color-primary);
-    
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    border-radius: var(--border-radius, 8px);
-    background: var(--color-background);
-    border: 1px solid var(--color-border);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-    overflow: hidden;
+    &--scrollable {
+      display: flex;
+      flex-direction: var(--flex-direction, row);
+      overflow-x: var(--overflow-x, hidden);
+      overflow-y: var(--overflow-y, hidden);
+      gap: var(--spacing-lg, 2rem);
+      padding-bottom: var(--padding-bottom, 0);
 
-    &:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 25px -5px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+      // Custom scrollbar styling
+      &::-webkit-scrollbar {
+        height: 6px;
+        width: 6px;
+      }
+
+      &::-webkit-scrollbar-track {
+        background: var(--color-surface);
+        border-radius: 3px;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background: var(--color-border);
+        border-radius: 3px;
+
+        &:hover {
+          background: var(--color-text-muted);
+        }
+      }
     }
   }
 
+  &__card {
+
+  }
+
   &__media {
-    padding: var(--spacing-lg, 2rem);
+    padding: var(--spacing-l);
     display: flex;
     justify-content: center;
     align-items: center;
+    width: fit-content; max-width: 100%;
     background: color-mix(in srgb, var(--card-color) 10%, transparent);
+    border-radius: var(--border-radius-s);
   }
 
   &__image {
     max-width: 100%;
     height: auto;
-    border-radius: var(--border-radius-sm, 4px);
+    border-radius: var(--border-radius-s);
   }
 
   &__icon {
-    font-size: 3rem;
+    font-size: clamp(1em, 2vw, 3em);
     color: var(--card-color);
   }
 
   &__content {
-    padding: var(--spacing-lg, 2rem);
+    padding: var(--spacing-l);
     flex: 1;
     display: flex;
     flex-direction: column;
   }
 
   &__card-title {
-    font-size: var(--font-size-h3, 1.5rem);
+    font-size: var(--font-size-l);
     font-weight: 600;
-    margin-bottom: var(--spacing-sm, 0.75rem);
+    margin-bottom: var(--spacing-s);
     color: var(--color-heading, var(--color-text));
   }
 
   &__subtitle {
-    font-size: var(--font-size-md, 1rem);
+    font-size: var(--font-size-m);
     font-weight: 500;
     color: var(--card-color);
-    margin-bottom: var(--spacing-md, 1rem);
+    margin-bottom: var(--spacing-m);
   }
 
   &__text {
-    color: var(--color-text-muted);
-    line-height: 1.6;
-    margin-bottom: var(--spacing-lg, 2rem);
+    opacity: .75;
+    line-height: 1.5;
+    margin-bottom: var(--spacing-l);
     flex: 1;
   }
 
@@ -174,7 +204,7 @@ const { bemm } = useBemm('card-section')
 
   &__footer {
     text-align: center;
-    padding-top: var(--spacing-lg, 2rem);
+    padding-top: var(--spacing-l);
     border-top: 1px solid var(--color-border);
   }
 }

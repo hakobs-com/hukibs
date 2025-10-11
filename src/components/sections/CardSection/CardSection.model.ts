@@ -21,4 +21,6 @@ export interface CardSectionProps extends BaseSectionProps {
   description?: string
   cards: CardItem[]
   columns?: number
+  scrollable?: boolean
+  scrollDirection?: 'horizontal' | 'vertical'
 }

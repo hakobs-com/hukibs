@@ -1,13 +1,13 @@
 <template>
   <div class="app">
-    <SettingsPanel :open="settingsOpen" @toggle="settingsOpen = !settingsOpen" @apply="applySettings" />
+    <SettingsPanel :open="settingsOpen" @toggle="settingsOpen = !settingsOpen" />
 
-    <div class="content">
-      <AppHeader v-if="config.header.enabled" :nav-items="headerNav" />
+
+      <AppHeader v-if="sharedSettings.header.enabled" :nav-items="headerNav" />
 
       <main class="page">
         <component
-          v-for="(section, i) in config.sections"
+          v-for="(section, i) in sharedSettings.sections"
           :key="section.id + '-' + i"
           :is="resolveSection(section.type)"
           v-bind="section.props"
@@ -15,20 +15,19 @@
       </main>
 
       <component
-        v-if="config.footer.type"
-        :is="config.footer.type === 'simple' ? 'SimpleFooter' : 'PageFooter'"
-        v-bind="config.footer.props"
+        v-if="sharedSettings.footer.enabled && sharedSettings.footer.type"
+        :is="resolveFooter(sharedSettings.footer.type)"
+        v-bind="sharedSettings.footer.props"
       />
     </div>
-  </div>
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
-import { AppHeader, BaseSection, CardSection, LogoScroller, SimpleFooter, PageFooter} from 'hukibs'
+import { ref, provide, reactive } from 'vue'
+import { AppHeader, BaseSection, CardSection, ContentSection, HeroSection, LogoScroller, SimpleFooter, PageFooter } from 'hukibs'
 import SettingsPanel from './components/SettingsPanel.vue'
 
-type SectionType = 'base' | 'cards' | 'logos'
+type SectionType = 'base' | 'cards' | 'content' | 'hero' | 'logos'
 
 const settingsOpen = ref(true)
 
@@ -37,10 +36,17 @@ const headerNav = [
   { label: 'Docs', href: '/' }
 ]
 
-const config = ref({
-  header: { enabled: true },
-  footer: {
-    type: 'simple' as 'simple' | 'page' | null,
+// Create a reactive settings state
+const sharedSettings = reactive({
+  header: { 
+    enabled: true, 
+    type: 'app' as 'app' | 'page' | 'simple', 
+    title: 'Demo Page',
+    props: {} 
+  },
+  footer: { 
+    enabled: true, 
+    type: 'simple' as 'simple' | 'page', 
     props: {
       label: 'Demo Footer',
       links: [
@@ -52,7 +58,7 @@ const config = ref({
   sections: [
     {
       id: 's1',
-      type: 'cards' as SectionType,
+      type: 'cards' as 'base' | 'cards' | 'content' | 'logos',
       props: {
         title: 'Our Services',
         description: 'Quick overview of what we offer',
@@ -64,20 +70,46 @@ const config = ref({
         ]
       }
     }
-  ]
+  ] as Array<{ id: string; type: 'base' | 'cards' | 'content' | 'logos'; props: any }>
 })
+
+// Provide settings to child components
+provide('settings', sharedSettings)
+
 
 function resolveSection(type: SectionType) {
   switch (type) {
     case 'base': return BaseSection
     case 'cards': return CardSection
+    case 'content': return ContentSection
+    case 'hero': return HeroSection
     case 'logos': return LogoScroller
   }
 }
 
-function applySettings(newConfig: any) {
-  config.value = newConfig
+function resolveFooter(type: 'simple' | 'page') {
+  switch (type) {
+    case 'simple': return SimpleFooter
+    case 'page': return PageFooter
+  }
 }
+
+
+// Load applied config from localStorage on component initialization
+function loadAppliedConfig() {
+  const saved = localStorage.getItem('demo-applied-config')
+  if (saved) {
+    try {
+      const parsed = JSON.parse(saved)
+      Object.assign(sharedSettings, parsed)
+    } catch (e) {
+      console.error('Failed to load applied config from localStorage:', e)
+    }
+  }
+}
+
+// Initialize applied config on mount
+loadAppliedConfig()
 </script>
 
 <style lang="scss">
@@ -86,12 +118,5 @@ function applySettings(newConfig: any) {
 .app {
   min-height: 100vh;
 }
-.content {
-  padding-top: var(--settings-panel-height, 56px);
-}
-.page {
-  padding: 2rem 1rem;
-  max-width: 1200px;
-  margin: 0 auto;
-}
+
 </style>

@@ -1,9 +1,9 @@
 <template>
-  <section 
-    :class="bemm('', ['', label ? 'has-label' : ''])" 
+  <section
+    :class="bemm('', ['', label ? 'has-label' : ''])"
     :style="sectionStyles"
   >
-    <Container 
+    <Container
       :class="bemm('container', [containerSize, containerColor ? 'has-background' : ''])"
       :style="containerStyles"
     >
@@ -38,14 +38,14 @@ const sectionStyles = computed(() => ({
 }))
 
 const containerStyles = computed(() => {
-  const maxWidth = props.containerSize === 'full' 
-    ? '100%' 
-    : props.containerSize === 'small' 
-      ? 'var(--post-max-width, 680px)' 
+  const maxWidth = props.containerSize === 'full'
+    ? '100%'
+    : props.containerSize === 'small'
+      ? 'var(--post-max-width, 680px)'
       : 'var(--content-max-width, 1200px)'
 
-  const padding = props.containerColor 
-    ? 'var(--container-padding, var(--spacing))' 
+  const padding = (props.containerColor && props.containerColor !== 'transparent')
+    ? 'var(--container-padding, var(--spacing))'
     : 'var(--container-padding, 0)'
 
   return {
@@ -59,34 +59,30 @@ const containerStyles = computed(() => {
 <style lang="scss">
 .base-section {
   width: 100%;
-  
+
   &--has-label {
     .base-section__container {
       position: relative;
     }
   }
-  
+
   &__container {
     border-radius: var(--container-border-radius, var(--border-radius, 8px));
     margin: 0 auto;
-    
+
     &--full {
       max-width: 100%;
     }
-    
+
     &--large {
       max-width: var(--content-max-width, 1200px);
     }
-    
+
     &--small {
       max-width: var(--post-max-width, 680px);
     }
-    
-    &--has-background {
-      box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-    }
   }
-  
+
   &__label {
     position: absolute;
     top: -12px;
@@ -102,7 +98,7 @@ const containerStyles = computed(() => {
     z-index: 1;
     border: 1px solid color-mix(in srgb, var(--color-primary, #000) 20%, transparent);
   }
-  
+
   &__content {
     position: relative;
     z-index: 1;
