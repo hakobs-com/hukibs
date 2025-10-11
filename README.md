@@ -68,6 +68,15 @@ Components for user feedback and notifications (see overview links above).
 ### Layout Components (`/src/components/layout/`)
 Components for structuring page layouts (see overview links above).
 
+## 🧪 Demo App
+
+A buildable demo project is included at `apps/demo` using Vite + TypeScript. It lets you toggle header/footer and add sections with dummy content from a fixed settings panel.
+
+Run locally:
+- `pnpm -C apps/demo install`
+- `pnpm -C apps/demo dev` (dev server)
+- `pnpm -C apps/demo build` (static build in `apps/demo/dist`)
+
 ## 🚀 Installation
 
 ```bash
