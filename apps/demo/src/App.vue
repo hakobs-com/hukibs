@@ -25,12 +25,7 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
-import { AppHeader } from 'hukibs'
-import { BaseSection } from 'hukibs'
-import { CardSection } from 'hukibs'
-import { LogoScroller } from 'hukibs'
-import { SimpleFooter } from 'hukibs'
-import { PageFooter } from 'hukibs'
+import { AppHeader, BaseSection, CardSection, LogoScroller, SimpleFooter, PageFooter} from 'hukibs'
 import SettingsPanel from './components/SettingsPanel.vue'
 
 type SectionType = 'base' | 'cards' | 'logos'

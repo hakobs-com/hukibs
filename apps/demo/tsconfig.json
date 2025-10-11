@@ -10,13 +10,8 @@
     "isolatedModules": true,
     "noEmit": true,
     "baseUrl": ".",
-    "paths": {
-      "hukibs": ["../../src"],
-      "hukibs/*": ["../../src/*"]
-    },
     "types": ["vite/client"]
   },
   "include": ["src/**/*.ts", "src/**/*.vue", "env.d.ts"],
   "exclude": ["node_modules", "dist"]
 }
-
