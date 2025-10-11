@@ -38,9 +38,8 @@ type SectionType = 'base' | 'cards' | 'logos'
 const settingsOpen = ref(true)
 
 const headerNav = [
-  { label: 'Home', href: '#' },
-  { label: 'Docs', href: '#' },
-  { label: 'Contact', href: '#' }
+  { label: 'Demo Home', href: '/demo/' },
+  { label: 'Docs', href: '/' }
 ]
 
 const config = ref({
@@ -99,4 +98,3 @@ function applySettings(newConfig: any) {
   margin: 0 auto;
 }
 </style>
-
