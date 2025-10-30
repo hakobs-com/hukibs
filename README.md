@@ -1,8 +1,29 @@
 # Hukibs
 
-[![Deploy Docs](https://github.com/hakobs-com/hukibs/actions/workflows/deploy-docs.yml/badge.svg)](https://github.com/hakobs-com/hukibs/actions/workflows/deploy-docs.yml)
+[![Deploy](https://github.com/hakobs-com/hukibs/actions/workflows/deploy.yml/badge.svg)](https://github.com/hakobs-com/hukibs/actions/workflows/deploy.yml)
 
-A modern, lightweight Vue 3 component library focused on developer experience and design consistency.
+A modern, lightweight Vue 3 component library monorepo focused on developer experience and design consistency.
+
+## 🚀 Live Links
+
+- **Documentation**: https://ui.hakobs.com/docs/
+- **Live Demo**: https://ui.hakobs.com/demo/
+- **Homepage**: https://ui.hakobs.com/
+
+## 📁 Monorepo Structure
+
+```
+hukibs/
+├── apps/
+│   ├── demo/          # Live demo application (https://ui.hakobs.com/demo/)
+│   └── docs/          # VitePress documentation (https://ui.hakobs.com/docs/)
+├── libs/
+│   └── hukibs/        # Main library package (published to npm)
+├── .github/
+│   └── workflows/     # GitHub Actions for automatic deployment
+├── pnpm-workspace.yaml
+└── index.html         # Simple homepage (https://ui.hakobs.com/)
+```
 
 ## 🎯 Design Principles
 
@@ -68,14 +89,47 @@ Components for user feedback and notifications (see overview links above).
 ### Layout Components (`/src/components/layout/`)
 Components for structuring page layouts (see overview links above).
 
-## 🧪 Demo App
+## 🛠️ Development
 
-A buildable demo project is included at `apps/demo` using Vite + TypeScript. It lets you toggle header/footer and add sections with dummy content from a fixed settings panel.
+### Prerequisites
+- Node.js 18+
+- pnpm 8+
 
-Run locally:
-- `pnpm -C apps/demo install`
-- `pnpm -C apps/demo dev` (dev server)
-- `pnpm -C apps/demo build` (static build in `apps/demo/dist`)
+### Install dependencies
+```bash
+pnpm install
+```
+
+### Development mode
+```bash
+# Start demo (with real-time settings panel)
+pnpm dev
+
+# Start docs  
+pnpm --filter docs dev
+
+# Start library development
+pnpm --filter hukibs dev
+```
+
+### Build
+```bash
+# Build all packages
+pnpm build
+
+# Build individual packages
+pnpm build:lib    # Build library for npm publishing
+pnpm build:docs   # Build documentation for GitHub Pages
+pnpm build:demo   # Build demo for GitHub Pages
+```
+
+### Other scripts
+```bash
+pnpm typecheck    # Type check all packages
+pnpm lint         # Lint all packages  
+pnpm test         # Run tests
+pnpm clean        # Clean build artifacts
+```
 
 ## 🚀 Installation
 

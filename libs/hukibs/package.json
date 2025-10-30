@@ -1,0 +1,75 @@
+{
+  "name": "hukibs",
+  "version": "0.0.8",
+  "description": "A modern Vue 3 UI component library with CSS custom properties theming",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hakobs-com/hukibs.git"
+  },
+  "homepage": "https://github.com/hakobs-com/hukibs#readme",
+  "bugs": {
+    "url": "https://github.com/hakobs-com/hukibs/issues"
+  },
+  "main": "./dist/index.es.js",
+  "module": "./dist/index.es.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.es.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./style.css": "./dist/style.css",
+    "./style.scss": "./src/styles/index.scss"
+  },
+  "files": [
+    "dist",
+    "src/styles",
+    "README.md"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc && vite build",
+    "preview": "vite preview",
+    "typecheck": "vue-tsc --noEmit",
+    "lint": "echo 'Add lint script here'",
+    "test": "echo 'Add test script here'",
+    "clean": "rm -rf dist"
+  },
+  "peerDependencies": {
+    "vue": "^3.5.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.0.4",
+    "sass": "^1.93.2",
+    "simple-git-hooks": "^2.9.0",
+    "typescript": "^5.2.2",
+    "vite": "^5.2.0",
+    "vite-plugin-dts": "^3.8.3",
+    "vitepress": "^1.6.4",
+    "vue": "^3.5.22",
+    "vue-tsc": "^2.0.6"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "pnpm run typecheck && pnpm run build"
+  },
+  "keywords": [
+    "vue",
+    "vue3",
+    "ui",
+    "components",
+    "library",
+    "typescript",
+    "css-custom-properties"
+  ],
+  "author": "Sil van Diepen",
+  "license": "MIT",
+  "dependencies": {
+    "@sil/color": "^0.5.0",
+    "bemm": "^1.2.2",
+    "open-icon": "^1.1.2"
+  }
+}

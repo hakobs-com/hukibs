@@ -1,82 +1,36 @@
 {
-  "name": "hukibs",
-  "version": "0.0.8",
-  "description": "A modern Vue 3 UI component library with CSS custom properties theming",
+  "name": "hukibs-monorepo",
+  "version": "1.0.0",
+  "description": "Hukibs UI Component Library Monorepo",
+  "private": true,
   "type": "module",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/hakobs-com/hukibs.git"
-  },
-  "homepage": "https://github.com/hakobs-com/hukibs#readme",
-  "bugs": {
-    "url": "https://github.com/hakobs-com/hukibs/issues"
-  },
-  "main": "./dist/index.es.js",
-  "module": "./dist/index.es.js",
-  "types": "./dist/index.d.ts",
-  "exports": {
-    ".": {
-      "import": "./dist/index.es.js",
-      "types": "./dist/index.d.ts"
-    },
-    "./style.css": "./dist/style.css",
-    "./style.scss": "./src/styles/index.scss"
-  },
-  "files": [
-    "dist",
-    "src/styles",
-    "README.md"
-  ],
-  "publishConfig": {
-    "access": "public"
-  },
   "scripts": {
-    "dev": "vite",
-    "build": "vue-tsc && vite build",
-    "preview": "vite preview",
-    "typecheck": "vue-tsc --noEmit",
-    "postinstall": "simple-git-hooks",
-    "demo:dev": "pnpm -C apps/demo dev",
-    "demo:build": "pnpm -C apps/demo build",
-    "demo:preview": "pnpm -C apps/demo preview",
-    "demo:install": "pnpm -C apps/demo install",
-    "docs:gen": "node scripts/generate-props-docs.cjs",
-    "docs:sync": "node scripts/sync-docs.cjs",
-    "docs:dev": "node scripts/sync-docs.cjs && vitepress dev docs",
-    "docs:build": "node scripts/sync-docs.cjs && vitepress build docs",
-    "docs:preview": "vitepress preview docs"
+    "dev": "pnpm --filter demo dev",
+    "build": "pnpm --filter hukibs build && pnpm --filter docs build && pnpm --filter demo build",
+    "build:lib": "pnpm --filter hukibs build",
+    "build:docs": "pnpm --filter docs build",
+    "build:demo": "pnpm --filter demo build",
+    "typecheck": "pnpm --filter hukibs typecheck && pnpm --filter demo typecheck",
+    "lint": "pnpm --filter hukibs lint && pnpm --filter demo lint",
+    "test": "pnpm --filter hukibs test",
+    "clean": "pnpm --filter hukibs clean && pnpm --filter docs clean && pnpm --filter demo clean",
+    "changeset": "changeset",
+    "version-packages": "changeset version",
+    "release": "pnpm build:lib && changeset publish"
   },
-  "peerDependencies": {
-    "vue": "^3.5.0"
-  },
-  "devDependencies": {
-    "@vitejs/plugin-vue": "^5.0.4",
-    "sass": "^1.93.2",
-    "simple-git-hooks": "^2.9.0",
-    "typescript": "^5.2.2",
-    "vite": "^5.2.0",
-    "vite-plugin-dts": "^3.8.3",
-    "vitepress": "^1.6.4",
-    "vue": "^3.5.22",
-    "vue-tsc": "^2.0.6"
-  },
-  "simple-git-hooks": {
-    "pre-commit": "pnpm run typecheck && pnpm run build"
-  },
-  "keywords": [
-    "vue",
-    "vue3",
-    "ui",
-    "components",
-    "library",
-    "typescript",
-    "css-custom-properties"
+  "workspaces": [
+    "apps/*",
+    "libs/*"
   ],
-  "author": "Sil van Diepen",
-  "license": "MIT",
-  "dependencies": {
-    "@sil/color": "^0.5.0",
-    "bemm": "^1.2.2",
-    "open-icon": "^1.1.2"
+  "devDependencies": {
+    "@changesets/cli": "^2.27.1",
+    "@types/node": "^20.0.0",
+    "typescript": "^5.0.0",
+    "vite": "^5.0.0"
+  },
+  "packageManager": "pnpm@8.0.0",
+  "engines": {
+    "node": ">=18.0.0",
+    "pnpm": ">=8.0.0"
   }
 }

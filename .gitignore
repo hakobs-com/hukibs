@@ -2,7 +2,9 @@ node_modules
 .DS_Store
 dist/
 dist-ssr/
-docs/.vitepress/cache
-docs/.vitepress/dist
-apps/demo/dist/
+apps/*/.vitepress/
+apps/*/dist/
+libs/*/dist/
 .claude/
+.pages/
+changeset-temp*
